@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <div className='flex min-h-screen flex-col'>
       {/* Hero Section */}
-      <section className='relative flex min-h-[600px] items-center justify-center'>
+      <section className='relative flex min-h-[550px] sm:min-h-[600px] items-center justify-center'>
         <div className='absolute inset-0'>
           <Image
             fill
@@ -88,7 +88,7 @@ export default function Page() {
                   vivendo em condições precárias.
                 </p>
                 <Link
-                  href='/projetos/habitacao'
+                  href='/projetos'
                   className='mt-4 inline-flex items-center text-sm font-medium text-secondary hover:text-secondary/90'
                 >
                   Saiba mais
@@ -110,7 +110,7 @@ export default function Page() {
                   dependentes de álcool e drogas.
                 </p>
                 <Link
-                  href='/projetos/reabilitacao'
+                  href='/projetos'
                   className='mt-4 inline-flex items-center text-sm font-medium text-secondary hover:text-secondary/90'
                 >
                   Saiba mais
@@ -132,7 +132,7 @@ export default function Page() {
                   adultos.
                 </p>
                 <Link
-                  href='/projetos/educacao'
+                  href='/projetos'
                   className='mt-4 inline-flex items-center text-sm font-medium text-secondary hover:text-secondary/90'
                 >
                   Saiba mais

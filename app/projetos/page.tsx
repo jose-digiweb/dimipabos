@@ -21,19 +21,19 @@ const featuredProjects = [
     title: 'Construção de Habitações Dignas',
     description: 'Desde 2020, já construímos 10 casas para famílias vulneráveis.',
     image: projHabitacao,
-    link: '/projetos/habitacao',
+    link: '/projetos/#',
   },
   {
     title: 'Reabilitação e Apoio',
     description: 'Programa de reabilitação e suporte para dependentes químicos.',
     image: projReab,
-    link: '/projetos/reabilitacao',
+    link: '/projetos/#',
   },
   {
     title: 'Educação e Capacitação',
     description: 'Oficinas de costura, carpintaria e alfabetização para adultos.',
     image: projEdu,
-    link: '/projetos/educacao',
+    link: '/projetos/#',
   },
 ];
 
@@ -108,10 +108,10 @@ export default function ProjectsPage() {
                 </CardContent>
                 <CardFooter className=''>
                   <Button asChild variant='secondary'>
-                    <Link href={project.link} className='inline-flex group items-center'>
+                    <span className='inline-flex group items-center'>
                       Leia Mais
                       <ArrowRight className='ml-2 size-4 group-hover:scale-125 group-hover:translate-x-1 transition-all' />
-                    </Link>
+                    </span>
                   </Button>
                 </CardFooter>
               </Card>

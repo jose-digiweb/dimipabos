@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
@@ -67,10 +66,10 @@ export function ProjectGrid() {
               </CardContent>
               <CardFooter className=''>
                 <Button asChild variant='secondary'>
-                  <Link href={project.link} className='inline-flex group items-center'>
+                  <span className='inline-flex group items-center'>
                     Leia Mais
                     <ArrowRight className='ml-2 size-4 group-hover:scale-125 group-hover:translate-x-1 transition-all' />
-                  </Link>
+                  </span>
                 </Button>
               </CardFooter>
             </Card>
