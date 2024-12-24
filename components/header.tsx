@@ -36,12 +36,12 @@ export function Header() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className='fixed top-0 z-50 w-full bg-primary drop-shadow-md'>
+    <header className='sticky top-0 z-50 w-full bg-primary drop-shadow-md'>
       <nav
         className='mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8'
         aria-label='Global'
       >
-        <div className='flex lg:flex-1 rounded-full drop-shadow-md'>
+        <div className='flex rounded-full drop-shadow-md'>
           <Link
             href='/'
             className='text-xl font-bold text-white rounded-full drop-shadow-md'
@@ -56,56 +56,6 @@ export function Header() {
           </Link>
         </div>
 
-        <div className='flex lg:hidden'>
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button
-                variant='ghost'
-                className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white hover:bg-primary-foreground/10'
-              >
-                <span className='sr-only'>Abrir menu principal</span>
-                <Menu className='h-6 w-6' aria-hidden='true' />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side='right' className='w-full'>
-              <div className='mt-6 flow-root'>
-                <SheetTitle className='sr-only'>The mobile menu</SheetTitle>
-                <SheetDescription className='sr-only'>
-                  The navigation menu for mobile
-                </SheetDescription>
-
-                <div className='-my-6 divide-y divide-gray-500/10'>
-                  <div className='space-y-2 py-6'>
-                    {navigation.map(item => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        onClick={closeMenu}
-                        className={cn(
-                          '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted',
-                          { 'text-accent': isActive(item.href) }
-                        )}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                  <div className='py-6'>
-                    <Button
-                      asChild
-                      className='w-full bg-secondary hover:bg-secondary/90'
-                      size='lg'
-                    >
-                      <Link href='/como-ajudar' onClick={closeMenu}>
-                        Doe Agora
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
         <div className='hidden lg:flex lg:gap-x-12'>
           {navigation.map(item => (
             <Link
@@ -120,10 +70,76 @@ export function Header() {
             </Link>
           ))}
         </div>
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          <Button asChild size='lg' className='bg-secondary hover:bg-secondary/90'>
-            <Link href='/como-ajudar'>Doe Agora</Link>
-          </Button>
+
+        <div className='flex items-center gap-4'>
+          <div className='flex'>
+            <Button
+              asChild
+              size='lg'
+              className='bg-secondary hidden lg:flex hover:bg-secondary/90'
+            >
+              <Link href='/como-ajudar'>Doe Agora</Link>
+            </Button>
+            <Button
+              asChild
+              size='sm'
+              className='bg-secondary lg:hidden hover:bg-secondary/90'
+            >
+              <Link href='/como-ajudar'>Doe Agora</Link>
+            </Button>
+          </div>
+
+          <div className='flex lg:hidden'>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  size='none'
+                  variant='clean'
+                  className='inline-flex items-center justify-center rounded-md text-white'
+                >
+                  <span className='sr-only'>Abrir menu principal</span>
+                  <Menu className='size-10' aria-hidden='true' />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side='right' className='w-full backdrop-blur-sm bg-white/80'>
+                <div className='mt-6 flow-root'>
+                  <SheetTitle className='sr-only'>The mobile menu</SheetTitle>
+                  <SheetDescription className='sr-only'>
+                    The navigation menu for mobile
+                  </SheetDescription>
+
+                  <div className='-my-6 divide-y divide-gray-500/10'>
+                    <div className='space-y-2 py-6'>
+                      {navigation.map(item => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          onClick={closeMenu}
+                          className={cn(
+                            '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted',
+                            { 'text-accent bg-muted': isActive(item.href) }
+                          )}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                    <div className='py-6'>
+                      <Button
+                        asChild
+                        className='w-full bg-secondary hover:bg-secondary/90'
+                        size='lg'
+                      >
+                        <Link href='/como-ajudar' onClick={closeMenu}>
+                          Doe Agora
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </nav>
     </header>

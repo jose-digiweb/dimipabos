@@ -19,7 +19,7 @@ export const SectionTitle = ({ children, className }: Props) => {
   return (
     <h2
       className={cn(
-        'text-3xl font-bold tracking-tight whitespace-nowrap text-foreground sm:text-4xl',
+        'text-3xl font-bold tracking-tight text-pretty text-foreground sm:text-4xl',
         className
       )}
     >

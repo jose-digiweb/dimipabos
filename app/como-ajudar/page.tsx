@@ -15,9 +15,9 @@ import heroImage from '@/assets/heroSection/hero_image.jpg';
 
 export default function HelpPage() {
   return (
-    <div className='flex min-h-screen flex-col'>
+    <div className='flex min-h-dvh flex-col'>
       {/* Hero Section */}
-      <section className='relative mt-16 flex min-h-[400px] items-center justify-center'>
+      <section className='relative flex min-h-[400px] items-center justify-center'>
         <div className='absolute inset-0'>
           <Image
             fill
@@ -28,7 +28,7 @@ export default function HelpPage() {
           <div className='absolute inset-0 bg-black/80' />
         </div>
         <div className='relative z-10 mx-auto max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8'>
-          <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl'>
+          <h1 className='text-4xl text-pretty font-bold tracking-tight sm:text-5xl md:text-6xl'>
             Como Ajudar
           </h1>
           <p className='mx-auto mt-6 text-pretty max-w-lg text-xl text-gray-100 sm:max-w-3xl'>
@@ -132,17 +132,17 @@ export default function HelpPage() {
       </section>
 
       {/* Donation Section */}
-      <section id='doar' className='bg-white py-16'>
+      <section id='doar' className='bg-white py-16 scroll-mt-8'>
         <DonationSection />
       </section>
 
       {/* Volunteer Section */}
-      <section id='voluntario' className='bg-muted py-16'>
+      <section id='voluntario' className='bg-muted py-16 scroll-mt-8'>
         <VolunteerForm />
       </section>
 
       {/* Partnership Section */}
-      <section id='parceiro' className='py-16'>
+      <section id='parceiro' className='py-16 scroll-mt-8'>
         <PartnershipForm />
       </section>
 

@@ -41,7 +41,7 @@ export default function ProjectsPage() {
   return (
     <div className='flex min-h-screen flex-col'>
       {/* Hero Section */}
-      <section className='relative mt-16 flex min-h-[400px] items-center justify-center'>
+      <section className='relative flex min-h-[400px] items-center justify-center'>
         <div className='absolute inset-0'>
           <Image
             fill
@@ -53,7 +53,7 @@ export default function ProjectsPage() {
         </div>
 
         <div className='relative z-10 mx-auto max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8'>
-          <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl'>
+          <h1 className='text-4xl text-pretty font-bold tracking-tight sm:text-5xl md:text-6xl'>
             Nossos Projetos
           </h1>
           <p className='mx-auto text-pretty mt-6 max-w-lg text-xl text-gray-100 sm:max-w-3xl'>

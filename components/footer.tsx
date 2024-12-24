@@ -63,7 +63,7 @@ export function Footer() {
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://www.facebook.com/profile.php?id=100090763747200'
-                className='text-primary-foreground/80 hover:text-primary-foreground'
+                className='text-primary-foreground/80 border rounded-sm p-1 hover:text-primary-foreground'
               >
                 <Facebook className='size-6' />
                 <span className='sr-only'>Facebook</span>
@@ -72,7 +72,7 @@ export function Footer() {
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://wa.me/31631791165'
-                className='text-primary-foreground/80 hover:text-primary-foreground'
+                className='text-primary-foreground/80 border rounded-sm p-1 hover:text-primary-foreground'
               >
                 <MessageCircle className='size-6' />
                 <span className='sr-only'>WhatsApp</span>

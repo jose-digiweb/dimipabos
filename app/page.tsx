@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <div className='flex min-h-screen flex-col'>
       {/* Hero Section */}
-      <section className='relative mt-16 flex min-h-[600px] items-center justify-center'>
+      <section className='relative flex min-h-[600px] items-center justify-center'>
         <div className='absolute inset-0'>
           <Image
             fill
@@ -30,12 +30,12 @@ export default function Page() {
         <div className='relative z-10 mx-auto max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8'>
           <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl'>
             DI MI PA BÔS
-            <span className='block text-2xl mt-2 font-medium sm:text-3xl md:text-4xl'>
+            <span className='block text-2xl mt-2 text-pretty font-medium sm:text-3xl md:text-4xl'>
               Transformando vidas na Guiné-Bissau
             </span>
           </h1>
 
-          <p className='mx-auto mt-6 max-w-lg text-xl text-gray-200 sm:max-w-3xl'>
+          <p className='mx-auto text-pretty mt-6 max-w-lg text-xl text-gray-200 sm:max-w-3xl'>
             Pequenos gestos que fazem toda a diferença na vida de quem mais precisa.
           </p>
 
