@@ -7,9 +7,16 @@ import { PartnershipForm } from '@/components/partnership-form';
 import { TestimonialSection } from '@/components/testimonial-section';
 
 import Image from 'next/image';
-import { SectionTitle } from '@/components/SectionTitle';
-import { SectionDescription } from '@/components/SectionDescription';
-import { CTASection } from '@/components/CTASection';
+import { SectionTitle, SectionDescription } from '@/components/section';
+import { CTASection } from '@/components/cta';
+import {
+  HeroTitle,
+  HeroDescription,
+  HeroImage,
+  HeroWrapper,
+  HeroTextWrapper,
+} from '@/components/heroSection';
+import Link from 'next/link';
 
 import heroImage from '@/assets/heroSection/hero_image.jpg';
 
@@ -17,25 +24,16 @@ export default function HelpPage() {
   return (
     <div className='flex min-h-dvh flex-col'>
       {/* Hero Section */}
-      <section className='relative flex min-h-[400px] items-center justify-center'>
-        <div className='absolute inset-0'>
-          <Image
-            fill
-            src={heroImage}
-            alt='Voluntários em ação'
-            className='h-full w-full object-cover'
-          />
-          <div className='absolute inset-0 bg-black/80' />
-        </div>
-        <div className='relative z-10 mx-auto max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8'>
-          <h1 className='text-4xl text-pretty font-bold tracking-tight sm:text-5xl md:text-6xl'>
-            Como Ajudar
-          </h1>
-          <p className='mx-auto mt-6 text-pretty max-w-lg text-xl text-gray-100 sm:max-w-3xl'>
+      <HeroWrapper subpage>
+        <HeroImage />
+
+        <HeroTextWrapper>
+          <HeroTitle>Como Ajudar</HeroTitle>
+          <HeroDescription>
             Junte-se a nós e faça a diferença na vida de quem mais precisa.
-          </p>
-        </div>
-      </section>
+          </HeroDescription>
+        </HeroTextWrapper>
+      </HeroWrapper>
 
       {/* Introduction Section */}
       <section className='bg-muted py-16'>
@@ -97,8 +95,8 @@ export default function HelpPage() {
                 vidas.
               </p>
 
-              <Button asChild className='mt-6 bg-secondary hover:bg-secondary/90'>
-                <a href='#doar'>Doe Agora</a>
+              <Button asChild variant='CTA' className='mt-6'>
+                <Link href='#doar'>Doe Agora</Link>
               </Button>
             </div>
 
@@ -110,8 +108,8 @@ export default function HelpPage() {
                 Dedique seu tempo e habilidades para fazer a diferença na vida de alguém.
               </p>
 
-              <Button asChild className='mt-6 bg-secondary hover:bg-secondary/90'>
-                <a href='#voluntario'>Inscreva-se</a>
+              <Button asChild variant='CTA' className='mt-6'>
+                <Link href='#voluntario'>Inscreva-se</Link>
               </Button>
             </div>
 
@@ -123,8 +121,8 @@ export default function HelpPage() {
                 Sua empresa pode fazer parte desta transformação social.
               </p>
 
-              <Button asChild className='mt-6 bg-secondary hover:bg-secondary/90'>
-                <a href='#parceiro'>Saiba Mais</a>
+              <Button asChild variant='CTA' className='mt-6'>
+                <Link href='#parceiro'>Saiba Mais</Link>
               </Button>
             </div>
           </div>

@@ -15,8 +15,8 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { SectionTitle } from './SectionTitle';
-import { SectionDescription } from './SectionDescription';
+import { SectionTitle } from './section/SectionTitle';
+import { SectionDescription } from './section/SectionDescription';
 
 const formSchema = z.object({
   companyName: z.string().min(2, {
@@ -188,7 +188,7 @@ export function PartnershipForm() {
                 )}
               />
 
-              <Button type='submit' className='w-full bg-secondary hover:bg-secondary/90'>
+              <Button type='submit' variant='secondary'>
                 Enviar Mensagem
               </Button>
             </form>

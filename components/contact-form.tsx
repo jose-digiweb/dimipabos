@@ -133,7 +133,7 @@ export function ContactForm() {
           )}
         />
 
-        <Button type='submit' className='w-full bg-secondary hover:bg-secondary/90'>
+        <Button type='submit' variant='secondary'>
           Enviar Mensagem
         </Button>
       </form>

@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { SectionTitle } from './SectionTitle';
-import { SectionDescription } from './SectionDescription';
+import { SectionTitle } from './section/SectionTitle';
+import { SectionDescription } from './section/SectionDescription';
 
 const donationPlans = [
   {
@@ -113,7 +113,7 @@ export function DonationSection() {
                   </li>
                 ))}
               </ul>
-              <Button className='mt-auto bg-secondary hover:bg-secondary/90'>
+              <Button variant='CTA' className='mt-auto'>
                 Doar Agora
               </Button>
             </CardContent>

@@ -23,8 +23,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { SectionTitle } from './SectionTitle';
-import { SectionDescription } from './SectionDescription';
+import { SectionTitle } from './section/SectionTitle';
+import { SectionDescription } from './section/SectionDescription';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -201,7 +201,7 @@ export function VolunteerForm() {
               )}
             />
 
-            <Button type='submit' className='bg-secondary hover:bg-secondary/90'>
+            <Button type='submit' variant='secondary'>
               Enviar Inscrição
             </Button>
           </form>

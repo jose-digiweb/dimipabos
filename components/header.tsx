@@ -17,6 +17,7 @@ import { cn } from '@/lib/utils';
 
 import logoImage from '@/assets/dimipabos_logo.png';
 import Image from 'next/image';
+import { CTAButton } from './cta';
 
 const navigation = [
   { name: 'Início', href: '/' },
@@ -73,20 +74,7 @@ export function Header() {
 
         <div className='flex items-center gap-4'>
           <div className='flex'>
-            <Button
-              asChild
-              size='lg'
-              className='bg-secondary hidden lg:flex hover:bg-secondary/90'
-            >
-              <Link href='/como-ajudar'>Doe Agora</Link>
-            </Button>
-            <Button
-              asChild
-              size='sm'
-              className='bg-secondary lg:hidden hover:bg-secondary/90'
-            >
-              <Link href='/como-ajudar'>Doe Agora</Link>
-            </Button>
+            <CTAButton size='default' />
           </div>
 
           <div className='flex lg:hidden'>
@@ -125,15 +113,7 @@ export function Header() {
                       ))}
                     </div>
                     <div className='py-6'>
-                      <Button
-                        asChild
-                        className='w-full bg-secondary hover:bg-secondary/90'
-                        size='lg'
-                      >
-                        <Link href='/como-ajudar' onClick={closeMenu}>
-                          Doe Agora
-                        </Link>
-                      </Button>
+                      <CTAButton />
                     </div>
                   </div>
                 </div>

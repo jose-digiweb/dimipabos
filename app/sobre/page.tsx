@@ -1,41 +1,36 @@
-import Link from 'next/link';
-import { Heart, Eye, HandshakeIcon as HandsClapping, ArrowRight } from 'lucide-react';
-
-import { Button } from '@/components/ui/button';
+import { Heart, Eye, HandshakeIcon } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TeamSection } from '@/components/team-section';
 import { ImpactNumbers } from '@/components/impact-numbers';
 import Image from 'next/image';
 
-import heroImage from '@/assets/heroSection/hero_image.jpg';
+import { SectionTitle } from '@/components/section';
+import {
+  HeroTitle,
+  HeroWrapper,
+  HeroTextWrapper,
+  HeroImage,
+  HeroDescription,
+} from '@/components/heroSection';
+import { CTAButton } from '@/components/cta';
+
 import logoGrande from '@/assets/logo_grande.jpg';
-import { SectionTitle } from '@/components/SectionTitle';
 
 export default function SobrePage() {
   return (
     <div className='flex min-h-screen flex-col'>
       {/* Hero Section */}
-      <section className='relative flex min-h-[400px] items-center justify-center'>
-        <div className='absolute inset-0'>
-          <Image
-            fill
-            src={heroImage}
-            alt='DI MI PA BÔS'
-            className='h-full w-full object-cover'
-          />
-          <div className='absolute inset-0 bg-black/80' />
-        </div>
+      <HeroWrapper subpage>
+        <HeroImage />
 
-        <div className='relative z-10 mx-auto max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8'>
-          <h1 className='text-4xl text-pretty font-bold tracking-tight sm:text-5xl md:text-6xl'>
-            Quem Somos?
-          </h1>
-          <p className='mx-auto mt-6 text-pretty max-w-lg text-xl text-gray-100'>
+        <HeroTextWrapper>
+          <HeroTitle>Quem Somos?</HeroTitle>
+          <HeroDescription>
             Conheça nossa história, nossa missão e o impacto que estamos criando na
             Guiné-Bissau.
-          </p>
-        </div>
-      </section>
+          </HeroDescription>
+        </HeroTextWrapper>
+      </HeroWrapper>
 
       {/* Quem Somos Section */}
       <section className='py-16'>
@@ -140,7 +135,7 @@ export default function SobrePage() {
             <Card>
               <CardHeader>
                 <CardTitle className='flex items-center gap-2'>
-                  <HandsClapping className='size-6 text-secondary' />
+                  <HandshakeIcon className='size-6 text-secondary' />
                   Valores
                 </CardTitle>
               </CardHeader>
@@ -212,16 +207,7 @@ export default function SobrePage() {
               dias.
             </p>
             <div className='mt-8'>
-              <Button
-                asChild
-                size='lg'
-                className='rounded-full group bg-secondary hover:bg-secondary/90'
-              >
-                <Link href='/como-ajudar'>
-                  Faça Parte Desta Mudança
-                  <ArrowRight className='ml-2 size-4 group-hover:scale-125 group-hover:translate-x-1 transition-all' />
-                </Link>
-              </Button>
+              <CTAButton text='Faça Parte Desta Mudança' />
             </div>
           </div>
         </div>

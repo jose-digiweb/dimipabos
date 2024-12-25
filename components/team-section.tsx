@@ -3,8 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import cesaltinaImage from '@/assets/team/cesaltina.jpeg';
 import avatarPlaceholder from '@/assets/team/avatar_placeholder.jpg';
 import Image from 'next/image';
-import { SectionTitle } from './SectionTitle';
-import { SectionDescription } from './SectionDescription';
+import { SectionTitle } from './section/SectionTitle';
+import { SectionDescription } from './section/SectionDescription';
 
 const team = [
   {

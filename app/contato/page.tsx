@@ -3,38 +3,31 @@ import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-import Image from 'next/image';
-import { SectionTitle } from '@/components/SectionTitle';
-import { SectionDescription } from '@/components/SectionDescription';
-
-import heroImage from '@/assets/heroSection/hero_image.jpg';
+import { SectionTitle, SectionDescription } from '@/components/section';
+import {
+  HeroTitle,
+  HeroDescription,
+  HeroImage,
+  HeroWrapper,
+  HeroTextWrapper,
+} from '@/components/heroSection';
 
 export default function ContactPage() {
   return (
     <div className='flex min-h-screen flex-col'>
       {/* Hero Section */}
-      <section className='relative flex min-h-[400px] items-center justify-center'>
-        <div className='absolute inset-0'>
-          <Image
-            fill
-            src={heroImage}
-            alt='Voluntários em ação'
-            className='h-full w-full object-cover'
-          />
-          <div className='absolute inset-0 bg-black/80' />
-        </div>
+      <HeroWrapper subpage>
+        <HeroImage />
 
-        <div className='relative z-10 mx-auto max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8'>
-          <h1 className='text-4xl text-pretty font-bold tracking-tight sm:text-5xl md:text-6xl'>
-            Estamos Aqui para Ajudar
-          </h1>
-          <p className='mx-auto mt-6 text-pretty max-w-lg text-xl text-gray-100 sm:max-w-3xl'>
+        <HeroTextWrapper>
+          <HeroTitle>Estamos Aqui para Ajudar</HeroTitle>
+          <HeroDescription>
             Nossa equipe está pronta para responder suas dúvidas, fornecer informações
             sobre nossos serviços ou discutir possíveis parcerias. Entre em contato
             conosco.
-          </p>
-        </div>
-      </section>
+          </HeroDescription>
+        </HeroTextWrapper>
+      </HeroWrapper>
 
       {/* Contact Form and Information */}
       <section className='py-16'>
@@ -48,6 +41,7 @@ export default function ContactPage() {
                 Preencha o formulário abaixo para entrar em contato conosco. Responderemos
                 o mais breve possível.
               </SectionDescription>
+
               <div className='mt-8'>
                 <ContactForm />
               </div>

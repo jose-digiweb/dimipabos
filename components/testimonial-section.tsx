@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
-import { SectionTitle } from './SectionTitle';
-import { SectionDescription } from './SectionDescription';
+import { SectionTitle } from './section/SectionTitle';
+import { SectionDescription } from './section/SectionDescription';
 
 import testimonialImage from '@/assets/testimonial/testimonial.jpg';
 import Image from 'next/image';

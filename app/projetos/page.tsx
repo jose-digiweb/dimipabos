@@ -1,20 +1,19 @@
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-
-import { Button } from '@/components/ui/button';
-import { ProjectGrid } from '@/components/project-grid';
 import { ImpactNumbers } from '@/components/impact-numbers';
 
-import heroImage from '@/assets/heroSection/hero_image.jpg';
-import Image from 'next/image';
-import { SectionTitle } from '@/components/SectionTitle';
-import { SectionDescription } from '@/components/SectionDescription';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { SectionTitle, SectionDescription } from '@/components/section';
+import { CTASection, CTAButton } from '@/components/cta';
+import {
+  HeroTitle,
+  HeroDescription,
+  HeroImage,
+  HeroWrapper,
+  HeroTextWrapper,
+} from '@/components/heroSection';
+import { ProjectCard, ProjectGrid } from '@/components/projects';
 
 import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
 import projReab from '@/assets/projectos/proj_reab.jpeg';
 import projEdu from '@/assets/projectos/proj_educacao.jpeg';
-import { CTASection } from '@/components/CTASection';
 
 const featuredProjects = [
   {
@@ -41,37 +40,22 @@ export default function ProjectsPage() {
   return (
     <div className='flex min-h-screen flex-col'>
       {/* Hero Section */}
-      <section className='relative flex min-h-[400px] items-center justify-center'>
-        <div className='absolute inset-0'>
-          <Image
-            fill
-            src={heroImage}
-            alt='Projeto em andamento'
-            className='h-full w-full object-cover'
-          />
-          <div className='absolute inset-0 bg-black/80' />
-        </div>
+      <HeroWrapper subpage>
+        <HeroImage />
 
-        <div className='relative z-10 mx-auto max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8'>
-          <h1 className='text-4xl text-pretty font-bold tracking-tight sm:text-5xl md:text-6xl'>
-            Nossos Projetos
-          </h1>
-          <p className='mx-auto text-pretty mt-6 max-w-lg text-xl text-gray-100 sm:max-w-3xl'>
+        <HeroTextWrapper>
+          <HeroTitle>Nossos Projetos</HeroTitle>
+
+          <HeroDescription>
             Transformamos vidas através de ações concretas. Conheça os projetos que estão
             mudando a Guiné-Bissau.
-          </p>
+          </HeroDescription>
+        </HeroTextWrapper>
 
-          <div className='mt-10'>
-            <Button
-              asChild
-              size='lg'
-              className='rounded-full bg-secondary hover:bg-secondary/90'
-            >
-              <Link href='/como-ajudar'>Saiba Como Ajudar</Link>
-            </Button>
-          </div>
+        <div className='mt-10'>
+          <CTAButton text='Saiba Como Ajudar' />
         </div>
-      </section>
+      </HeroWrapper>
 
       {/* Featured Projects */}
       <section className='py-16'>
@@ -86,35 +70,7 @@ export default function ProjectsPage() {
 
           <div className='mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
             {featuredProjects.map((project, index) => (
-              <Card
-                key={index}
-                className='overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:-translate-y-1'
-              >
-                <CardHeader className='aspect-video relative w-full overflow-hidden'>
-                  <Image
-                    fill
-                    src={project.image}
-                    alt={project.title}
-                    className='h-full w-full object-cover'
-                  />
-                </CardHeader>
-                <CardContent className='p-0'>
-                  <div className='p-6'>
-                    <h3 className='text-xl font-bold text-foreground'>{project.title}</h3>
-                    <p className='mt-2 text-muted-foreground text-pretty'>
-                      {project.description}
-                    </p>
-                  </div>
-                </CardContent>
-                <CardFooter className=''>
-                  <Button asChild variant='secondary'>
-                    <span className='inline-flex group items-center'>
-                      Leia Mais
-                      <ArrowRight className='ml-2 size-4 group-hover:scale-125 group-hover:translate-x-1 transition-all' />
-                    </span>
-                  </Button>
-                </CardFooter>
-              </Card>
+              <ProjectCard key={index} project={project} />
             ))}
           </div>
         </div>
