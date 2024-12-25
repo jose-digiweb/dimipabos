@@ -2,10 +2,10 @@ import { Mail, Phone, MapPin, Facebook, MessageCircle, ArrowRight } from 'lucide
 import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-
 import { SectionTitle, SectionDescription } from '@/components/section';
 import Link from 'next/link';
 import {
+  HeroCardSection,
   HeroDescription,
   HeroTitle,
   HeroTopText,
@@ -60,9 +60,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className='relative flex items-center justify-center'>
-          <div className='absolute -left-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl' />
-          <div className='absolute -right-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl' />
+        <HeroCardSection>
           <div className='relative rounded-2xl bg-white p-8 shadow-2xl'>
             <div className='grid gap-6'>
               <div className='flex items-center gap-4'>
@@ -94,7 +92,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </div>
+        </HeroCardSection>
       </HeroWrapper>
 
       <section className='bg-slate-50 py-16'>

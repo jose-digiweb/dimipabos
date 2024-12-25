@@ -1,23 +1,21 @@
 import Link from 'next/link';
-
 import { Button } from '@/components/ui/button';
 import { TestimonialSection } from '@/components/testimonial-section';
-
 import { SectionTitle, SectionDescription } from '@/components/section';
 import { CTASection, CTAButton } from '@/components/cta';
 import {
   HeroDescription,
-  HeroProjectCard,
   HeroTitle,
   HeroTopText,
   HeroWrapper,
+  HeroSubtitle,
+  HeroStats,
+  HeroCard,
+  HeroCardSection,
 } from '@/components/heroSection';
-import { Heart, Home, Users } from 'lucide-react';
-import Image from 'next/image';
+import { HomeProjectCard } from '@/components/HomeProjectCard';
 
 import heroImage from '@/assets/heroSection/hero_image.jpg';
-import { HeroSubtitle } from '@/components/heroSection/HeroSubtitle';
-import { HeroStats } from '@/components/heroSection/HeroStats';
 
 export default function Page() {
   return (
@@ -50,42 +48,12 @@ export default function Page() {
           </div>
         </div>
 
-        <div className='relative flex items-center justify-center'>
-          <div className='absolute -left-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl' />
-          <div className='absolute -right-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl' />
-
-          <div className='relative grid gap-6'>
-            <div className='overflow-hidden rounded-2xl bg-white shadow-2xl max-w-lg'>
-              <div className='aspect-video relative w-full'>
-                <Image
-                  fill
-                  priority
-                  src={heroImage}
-                  alt='Impacto na comunidade'
-                  className='h-full w-full object-cover'
-                />
-              </div>
-              <div className='p-8'>
-                <h3 className='text-xl font-bold'>Nossa Missão</h3>
-                <p className='mt-2 text-muted-foreground'>
-                  Garantir dignidade e conforto a quem mais precisa, transformando vidas
-                  através de ações concretas.
-                </p>
-                <div className='mt-6 flex gap-4'>
-                  <div className='flex size-12 items-center justify-center rounded-full bg-primary/10'>
-                    <Home className='size-6 text-primary' />
-                  </div>
-                  <div className='flex size-12 items-center justify-center rounded-full bg-secondary/10'>
-                    <Heart className='size-6 text-secondary' />
-                  </div>
-                  <div className='flex size-12 items-center justify-center rounded-full bg-accent/10'>
-                    <Users className='size-6 text-accent-foreground' />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeroCardSection>
+          <HeroCard variant='home' title='Nossa Missão' image={heroImage}>
+            Garantir dignidade e conforto a quem mais precisa, transformando vidas através
+            de ações concretas.
+          </HeroCard>
+        </HeroCardSection>
       </HeroWrapper>
 
       <section className='bg-slate-50 py-16'>
@@ -100,19 +68,19 @@ export default function Page() {
           </div>
 
           <div className='mt-16 grid gap-8 md:grid-cols-3'>
-            <HeroProjectCard icon='home' title='Habitação Digna' href='/projetos'>
+            <HomeProjectCard icon='home' title='Habitação Digna' href='/projetos'>
               Construímos casas simples, mas confortáveis, para pessoas sem teto ou
               vivendo em condições precárias.
-            </HeroProjectCard>
+            </HomeProjectCard>
 
-            <HeroProjectCard icon='reab' title='Reabilitação' href='/projetos'>
+            <HomeProjectCard icon='reab' title='Reabilitação' href='/projetos'>
               Oferecemos tratamento, apoio psicológico e reintegração social a dependentes
               de álcool e drogas.
-            </HeroProjectCard>
+            </HomeProjectCard>
 
-            <HeroProjectCard icon='edu' title='Educação' href='/projetos'>
+            <HomeProjectCard icon='edu' title='Educação' href='/projetos'>
               Promovemos oficinas de costura, carpintaria e alfabetização para adultos.
-            </HeroProjectCard>
+            </HomeProjectCard>
           </div>
         </div>
       </section>

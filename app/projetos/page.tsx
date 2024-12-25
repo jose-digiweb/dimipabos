@@ -1,25 +1,23 @@
 import { ImpactNumbers } from '@/components/impact-numbers';
-
 import { SectionTitle, SectionDescription } from '@/components/section';
 import { CTASection, CTAButton } from '@/components/cta';
 import { ProjectCard, ProjectGrid } from '@/components/projects';
-
-import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
-import projReab from '@/assets/projectos/proj_reab.jpeg';
-import projEdu from '@/assets/projectos/proj_educacao.jpeg';
-
-import { GraduationCap, Hammer, HeartHandshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   HeroDescription,
   HeroTitle,
   HeroTopText,
   HeroWrapper,
+  HeroSubtitle,
+  HeroCard,
+  HeroCardSection,
+  HeroStats,
 } from '@/components/heroSection';
-import { HeroSubtitle } from '@/components/heroSection/HeroSubtitle';
-import { HeroStats } from '@/components/heroSection/HeroStats';
+
+import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
+import projReab from '@/assets/projectos/proj_reab.jpeg';
+import projEdu from '@/assets/projectos/proj_educacao.jpeg';
 
 const featuredProjects = [
   {
@@ -76,50 +74,13 @@ export default function ProjectsPage() {
             <HeroStats value='50+' label='Alunos em Formação' />
           </div>
         </div>
-        <div className='relative flex items-center justify-center'>
-          <div className='absolute -left-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl' />
-          <div className='absolute -right-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl' />
-          <div className='relative grid gap-6'>
-            <div className='overflow-hidden rounded-2xl bg-white shadow-2xl max-w-lg'>
-              <div className='aspect-video relative w-full'>
-                <Image
-                  fill
-                  priority
-                  src={projReab}
-                  alt='Projetos em ação'
-                  className='h-full w-full object-cover'
-                />
-              </div>
-              <div className='p-8'>
-                <h3 className='text-xl font-bold'>Áreas de Atuação</h3>
-                <p className='mt-2 text-muted-foreground'>
-                  Nossos projetos focam em três pilares fundamentais: habitação,
-                  reabilitação e educação.
-                </p>
-                <div className='mt-6 grid grid-cols-3 gap-4'>
-                  <div className='text-center'>
-                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10'>
-                      <Hammer className='h-6 w-6 text-primary' />
-                    </div>
-                    <p className='mt-2 text-sm font-medium'>Habitação</p>
-                  </div>
-                  <div className='text-center'>
-                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10'>
-                      <HeartHandshake className='h-6 w-6 text-secondary' />
-                    </div>
-                    <p className='mt-2 text-sm font-medium'>Reabilitação</p>
-                  </div>
-                  <div className='text-center'>
-                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10'>
-                      <GraduationCap className='h-6 w-6 text-accent-foreground' />
-                    </div>
-                    <p className='mt-2 text-sm font-medium'>Educação</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <HeroCardSection>
+          <HeroCard variant='projetos' title='Áreas de Atuação' image={projReab}>
+            Nossos projetos focam em três pilares fundamentais: habitação, reabilitação e
+            educação.
+          </HeroCard>
+        </HeroCardSection>
       </HeroWrapper>
 
       {/* Featured Projects */}

@@ -20,7 +20,7 @@ export const HeroDescription = ({ children, className }: Props) => {
   return (
     <p
       className={cn(
-        'mt-6 text-xl text-pretty leading-8 text-muted-foreground',
+        'mt-6 text-xl text-pretty max-w-xl leading-8 text-muted-foreground',
         className
       )}
     >

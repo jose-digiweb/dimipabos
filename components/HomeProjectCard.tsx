@@ -38,7 +38,7 @@ const getIcon = (icon: Icons) => {
  * @param {string} props.className The component class name
  * @returns {JSX.Element} The HeroProjectCard component
  */
-export const HeroProjectCard = ({ icon, title, children, href, className }: Props) => {
+export const HomeProjectCard = ({ icon, title, children, href, className }: Props) => {
   const Icon = useMemo(() => getIcon(icon), [icon]);
 
   return (

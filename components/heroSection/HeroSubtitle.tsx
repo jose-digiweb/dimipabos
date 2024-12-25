@@ -19,7 +19,7 @@ export const HeroSubtitle = ({ children, className }: Props) => {
   return (
     <span
       className={cn(
-        'mt-2 text-pretty block text-2xl font-medium text-primary sm:text-3xl md:text-4xl',
+        'mt-2 text-pretty block max-w-lg text-2xl font-medium text-primary sm:text-3xl md:text-4xl',
         className
       )}
     >

@@ -3,22 +3,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TeamSection } from '@/components/team-section';
 import { ImpactNumbers } from '@/components/impact-numbers';
 import Image from 'next/image';
-
 import { SectionTitle } from '@/components/section';
 import { CTAButton } from '@/components/cta';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-
-import logoGrande from '@/assets/logo_grande.jpg';
-import logo from '@/assets/dimipabos_logo.png';
 import {
   HeroDescription,
   HeroTitle,
   HeroTopText,
   HeroWrapper,
+  HeroSubtitle,
+  HeroCard,
+  HeroCardSection,
+  HeroStats,
 } from '@/components/heroSection';
-import { HeroSubtitle } from '@/components/heroSection/HeroSubtitle';
-import { HeroStats } from '@/components/heroSection/HeroStats';
+
+import logo from '@/assets/dimipabos_logo.png';
 
 export default function SobrePage() {
   return (
@@ -52,46 +52,13 @@ export default function SobrePage() {
             <HeroStats value='3' label='Anos de História' />
           </div>
         </div>
-        <div className='relative flex items-center justify-center'>
-          <div className='absolute -left-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl' />
-          <div className='absolute -right-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl' />
-          <div className='relative grid gap-6'>
-            <div className='overflow-hidden rounded-2xl bg-white shadow-2xl max-w-lg'>
-              <div className='aspect-video relative w-full'>
-                <Image
-                  fill
-                  src={logoGrande}
-                  alt='Fundação da ONG'
-                  className='h-full w-full object-contain rounded-t-xl z-10'
-                />
-                <Image
-                  fill
-                  src={logoGrande}
-                  alt='Fundação da ONG'
-                  className='h-full w-full object-cover z-0 rounded-t-xl blur-lg'
-                />
-              </div>
-              <div className='p-8'>
-                <h3 className='text-xl font-bold'>Nossa Essência</h3>
-                <p className='mt-2 text-muted-foreground'>
-                  Mais do que uma ONG, somos uma família unida por empatia e
-                  solidariedade, comprometida em oferecer amor, cuidado e dignidade.
-                </p>
-                <div className='mt-6 flex gap-4'>
-                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-primary/10'>
-                    <Heart className='h-6 w-6 text-primary' />
-                  </div>
-                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10'>
-                    <HandshakeIcon className='h-6 w-6 text-secondary' />
-                  </div>
-                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-accent/10'>
-                    <Eye className='h-6 w-6 text-accent-foreground' />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <HeroCardSection>
+          <HeroCard variant='sobre' title='Nossa Essência' image={logo}>
+            Mais do que uma ONG, somos uma família unida por empatia e solidariedade,
+            comprometida em oferecer amor, cuidado e dignidade.
+          </HeroCard>
+        </HeroCardSection>
       </HeroWrapper>
 
       {/* História Section */}

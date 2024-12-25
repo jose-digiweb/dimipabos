@@ -1,25 +1,24 @@
-import { Heart, Users, Handshake, Building, UserPlus, Wallet } from 'lucide-react';
-
+import { Heart, Users, Handshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DonationSection } from '@/components/donation-section';
 import { VolunteerForm } from '@/components/volunteer-form';
 import { PartnershipForm } from '@/components/partnership-form';
 import { TestimonialSection } from '@/components/testimonial-section';
-
-import Image from 'next/image';
 import { SectionTitle, SectionDescription } from '@/components/section';
 import { CTAButton, CTASection } from '@/components/cta';
 import Link from 'next/link';
-
-import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
 import {
   HeroDescription,
   HeroTitle,
   HeroTopText,
   HeroWrapper,
+  HeroSubtitle,
+  HeroCard,
+  HeroCardSection,
+  HeroStats,
 } from '@/components/heroSection';
-import { HeroSubtitle } from '@/components/heroSection/HeroSubtitle';
-import { HeroStats } from '@/components/heroSection/HeroStats';
+
+import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
 
 export default function HelpPage() {
   return (
@@ -51,50 +50,13 @@ export default function HelpPage() {
             <HeroStats value='5+' label='Empresas Parceiras' />
           </div>
         </div>
-        <div className='relative flex items-center justify-center'>
-          <div className='absolute -left-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl' />
-          <div className='absolute -right-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl' />
-          <div className='relative grid gap-6'>
-            <div className='overflow-hidden rounded-2xl bg-white shadow-2xl max-w-lg'>
-              <div className='aspect-video relative w-full'>
-                <Image
-                  fill
-                  priority
-                  src={projHabitacao}
-                  alt='Impacto na comunidade'
-                  className='h-full w-full object-cover'
-                />
-              </div>
-              <div className='p-8'>
-                <h3 className='text-xl font-bold'>Como Você Pode Ajudar</h3>
-                <p className='mt-2 text-muted-foreground'>
-                  Escolha a forma que mais combina com você e faça parte desta
-                  transformação social.
-                </p>
-                <div className='mt-6 grid grid-cols-3 gap-4'>
-                  <div className='text-center'>
-                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10'>
-                      <Wallet className='h-6 w-6 text-primary' />
-                    </div>
-                    <p className='mt-2 text-sm font-medium'>Doe</p>
-                  </div>
-                  <div className='text-center'>
-                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10'>
-                      <UserPlus className='h-6 w-6 text-secondary' />
-                    </div>
-                    <p className='mt-2 text-sm font-medium'>Voluntarie-se</p>
-                  </div>
-                  <div className='text-center'>
-                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10'>
-                      <Building className='h-6 w-6 text-accent-foreground' />
-                    </div>
-                    <p className='mt-2 text-sm font-medium'>Seja Parceiro</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <HeroCardSection>
+          <HeroCard variant='ajudar' title='Como Você Pode Ajudar' image={projHabitacao}>
+            Escolha a forma que mais combina com você e faça parte desta transformação
+            social.
+          </HeroCard>
+        </HeroCardSection>
       </HeroWrapper>
 
       {/* Ways to Help Section */}
