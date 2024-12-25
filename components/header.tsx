@@ -89,14 +89,14 @@ export function Header() {
                   <Menu className='size-10' aria-hidden='true' />
                 </Button>
               </SheetTrigger>
-              <SheetContent side='right' className='w-full backdrop-blur-sm bg-white/80'>
+              <SheetContent side='right' className='w-full backdrop-blur-sm bg-slate-50'>
                 <div className='mt-6 flow-root'>
                   <SheetTitle className='sr-only'>The mobile menu</SheetTitle>
                   <SheetDescription className='sr-only'>
                     The navigation menu for mobile
                   </SheetDescription>
 
-                  <div className='-my-6 divide-y divide-gray-500/10'>
+                  <div className='-my-6 divide-y'>
                     <div className='space-y-2 py-6'>
                       {navigation.map(item => (
                         <Link
@@ -104,8 +104,11 @@ export function Header() {
                           href={item.href}
                           onClick={closeMenu}
                           className={cn(
-                            '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted',
-                            { 'text-accent bg-muted': isActive(item.href) }
+                            '-mx-3 block rounded-md px-3 py-2 text-base font-semibold leading-7 text-foreground',
+                            {
+                              'text-primary bg-blue-50 shadow-sm drop-shadow-sm':
+                                isActive(item.href),
+                            }
                           )}
                         >
                           {item.name}
@@ -113,7 +116,7 @@ export function Header() {
                       ))}
                     </div>
                     <div className='py-6'>
-                      <CTAButton />
+                      <CTAButton className='w-full' onClick={closeMenu} />
                     </div>
                   </div>
                 </div>

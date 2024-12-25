@@ -26,7 +26,7 @@ export const HeroWrapper = ({ children, className }: Props) => {
       )}
     >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='grid min-h-[600px] items-center gap-12 py-16 md:grid-cols-2 lg:min-h-[700px] lg:gap-16'>
+        <div className='grid min-h-[600px] items-center gap-12 pt-8 pb-16 md:grid-cols-2 lg:min-h-[700px] lg:gap-16'>
           {children}
         </div>
       </div>

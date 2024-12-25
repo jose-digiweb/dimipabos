@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 type Props = {
   text?: string;
+  onClick?: () => void;
 } & Omit<ButtonProps, 'variant'>;
 
 /**
@@ -15,9 +16,9 @@ type Props = {
  * @param {string} props.className The component class name
  * @returns {JSX.Element} The CATButton component
  */
-export const CTAButton = ({ text, size = 'lg', className }: Props) => {
+export const CTAButton = ({ text, onClick, size = 'lg', className }: Props) => {
   return (
-    <Button asChild size={size} variant='CTA'>
+    <Button asChild size={size} variant='CTA' onClick={onClick}>
       <Link
         href='/como-ajudar'
         className={cn('flex group items-center gap-4', className)}
