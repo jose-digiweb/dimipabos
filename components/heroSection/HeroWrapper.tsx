@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 type Props = {
   children: ReactNode;
-  subpage?: boolean;
   className?: string;
 };
 
@@ -18,19 +17,19 @@ type Props = {
  * @param {string} props.className The component class name
  * @returns {JSX.Element} The HeroWrapper component
  */
-export const HeroWrapper = ({ subpage = false, children, className }: Props) => {
+export const HeroWrapper = ({ children, className }: Props) => {
   return (
     <section
       className={cn(
-        'relative flex flex-col items-center justify-center',
-        {
-          'min-h-[550px] sm:min-h-[600px]': !subpage,
-          'min-h-[400px]': subpage,
-        },
+        'relative overflow-hidden bg-gradient-to-b from-primary/5 to-primary/10',
         className
       )}
     >
-      {children}
+      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+        <div className='grid min-h-[600px] items-center gap-12 py-16 md:grid-cols-2 lg:min-h-[700px] lg:gap-16'>
+          {children}
+        </div>
+      </div>
     </section>
   );
 };

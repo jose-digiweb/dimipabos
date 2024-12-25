@@ -1,36 +1,119 @@
-import { Mail, Phone, MapPin, Facebook, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, MessageCircle, ArrowRight } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 import { SectionTitle, SectionDescription } from '@/components/section';
+import Link from 'next/link';
 import {
-  HeroTitle,
   HeroDescription,
-  HeroImage,
+  HeroTitle,
+  HeroTopText,
   HeroWrapper,
-  HeroTextWrapper,
 } from '@/components/heroSection';
+import { HeroStats } from '@/components/heroSection/HeroStats';
 
 export default function ContactPage() {
   return (
     <div className='flex min-h-screen flex-col'>
       {/* Hero Section */}
-      <HeroWrapper subpage>
-        <HeroImage />
+      <HeroWrapper>
+        <div className='flex flex-col justify-center'>
+          <HeroTopText>Fale Conosco</HeroTopText>
 
-        <HeroTextWrapper>
-          <HeroTitle>Estamos Aqui para Ajudar</HeroTitle>
+          <HeroTitle>
+            Entre em Contato{' '}
+            <span className='relative whitespace-nowrap'>
+              <span className='relative text-primary'>Conosco</span>
+            </span>
+          </HeroTitle>
+
           <HeroDescription>
-            Nossa equipe está pronta para responder suas dúvidas, fornecer informações
-            sobre nossos serviços ou discutir possíveis parcerias. Entre em contato
-            conosco.
+            Estamos aqui para ajudar. Nossa equipe está pronta para responder suas dúvidas
+            e ouvir suas sugestões.
           </HeroDescription>
-        </HeroTextWrapper>
+
+          <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
+            <Button size='lg' variant='CTA' asChild>
+              <Link href='/contato#enviar-mensagem'>
+                Enviar Mensagem
+                <ArrowRight className='ml-2 size-4' />
+              </Link>
+            </Button>
+
+            <Button size='lg' variant='outline' asChild>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://wa.me/31631791165'
+                className='hover:text-secondary'
+              >
+                WhatsApp
+              </a>
+            </Button>
+          </div>
+
+          <div className='mt-10 flex items-center gap-4'>
+            <HeroStats value='200+' label='Vidas Impactadas' />
+
+            <HeroStats value='24/7' label='Suporte Disponível' />
+          </div>
+        </div>
+
+        <div className='relative flex items-center justify-center'>
+          <div className='absolute -left-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl' />
+          <div className='absolute -right-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl' />
+          <div className='relative rounded-2xl bg-white p-8 shadow-2xl'>
+            <div className='grid gap-6'>
+              <div className='flex items-center gap-4'>
+                <div className='flex size-12 items-center justify-center rounded-full bg-primary/10'>
+                  <Mail className='size-6 text-primary' />
+                </div>
+                <div>
+                  <p className='font-medium'>Email</p>
+                  <p className='text-sm text-muted-foreground'>contato@dimipabos.org</p>
+                </div>
+              </div>
+              <div className='flex items-center gap-4'>
+                <div className='flex size-12 items-center justify-center rounded-full bg-secondary/10'>
+                  <Phone className='size-6 text-secondary' />
+                </div>
+                <div>
+                  <p className='font-medium'>Telefone</p>
+                  <p className='text-sm text-muted-foreground'>+31 631 791 165</p>
+                </div>
+              </div>
+              <div className='flex items-center gap-4'>
+                <div className='flex size-12 items-center justify-center rounded-full bg-accent/10'>
+                  <MapPin className='size-6 text-accent-foreground' />
+                </div>
+                <div>
+                  <p className='font-medium'>Endereço</p>
+                  <p className='text-sm text-muted-foreground'>Bissau, Guiné-Bissau</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </HeroWrapper>
 
+      <section className='bg-slate-50 py-16'>
+        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+          <div className='text-center'>
+            <h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
+              Estamos Aqui para Ajudar
+            </h2>
+            <p className='mx-auto mt-4 max-w-2xl text-lg text-muted-foreground'>
+              Nossa equipe está pronta para responder suas dúvidas, fornecer informações
+              sobre nossos serviços ou discutir possíveis parcerias. Entre em contato
+              conosco.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form and Information */}
-      <section className='py-16'>
+      <section id='enviar-mensagem' className='py-16 scroll-mt-8'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='grid gap-12 lg:grid-cols-2'>
             {/* Contact Form */}

@@ -9,22 +9,21 @@ type Props = {
 };
 
 /**
- * The HeroDescription component
- * @description Will render the HeroDescription
+ * The HeroSubtitle component
+ * @description Will render the HeroSubtitle
  * @param {Props} props The component props
- * @param {ReactNode} props.children The component children
  * @param {string} props.className The component class name
- * @returns {JSX.Element} The HeroDescription component
+ * @returns {JSX.Element} The HeroSubtitle component
  */
-export const HeroDescription = ({ children, className }: Props) => {
+export const HeroSubtitle = ({ children, className }: Props) => {
   return (
-    <p
+    <span
       className={cn(
-        'mt-6 text-xl text-pretty leading-8 text-muted-foreground',
+        'mt-2 text-pretty block text-2xl font-medium text-primary sm:text-3xl md:text-4xl',
         className
       )}
     >
       {children}
-    </p>
+    </span>
   );
 };

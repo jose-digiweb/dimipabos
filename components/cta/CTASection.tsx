@@ -19,11 +19,12 @@ type Props = {
  */
 export const CTASection = ({ className }: Props) => {
   return (
-    <section className={cn('bg-accent py-16 text-accent-foreground', className)}>
+    <section className={cn('bg-primary py-16 text-primary-foreground', className)}>
       <div className='mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8'>
-        <SectionTitle>Faça Parte Desta Mudança</SectionTitle>
-
-        <SectionDescription className='text-accent-foreground/90'>
+        <SectionTitle className='text-primary-foreground'>
+          Faça Parte Desta Mudança
+        </SectionTitle>
+        <SectionDescription className='text-primary-foreground'>
           Sua contribuição pode transformar vidas. <br /> Junte-se a nós nessa missão.
         </SectionDescription>
 

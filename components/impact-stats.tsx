@@ -38,7 +38,7 @@ export function ImpactStats() {
                 <CardTitle>{stat.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className='text-4xl font-bold text-secondary'>{stat.value}</p>
+                <p className='text-4xl font-bold text-primary'>{stat.value}</p>
                 <p className='mt-2 text-sm text-accent-foreground/80'>
                   {stat.description}
                 </p>

@@ -23,8 +23,11 @@ export function ImpactNumbers() {
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-4'>
           {stats.map((stat, index) => (
-            <div key={index} className='flex flex-col items-center'>
-              <div className='text-4xl font-bold text-accent'>{stat.number}</div>
+            <div
+              key={index}
+              className='flex flex-col items-center text-primary-foreground'
+            >
+              <div className='text-4xl font-bold'>{stat.number}</div>
               <div className='mt-2 text-lg'>{stat.label}</div>
             </div>
           ))}

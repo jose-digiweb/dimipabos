@@ -5,59 +5,97 @@ import { ImpactNumbers } from '@/components/impact-numbers';
 import Image from 'next/image';
 
 import { SectionTitle } from '@/components/section';
-import {
-  HeroTitle,
-  HeroWrapper,
-  HeroTextWrapper,
-  HeroImage,
-  HeroDescription,
-} from '@/components/heroSection';
 import { CTAButton } from '@/components/cta';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 import logoGrande from '@/assets/logo_grande.jpg';
+import logo from '@/assets/dimipabos_logo.png';
+import {
+  HeroDescription,
+  HeroTitle,
+  HeroTopText,
+  HeroWrapper,
+} from '@/components/heroSection';
+import { HeroSubtitle } from '@/components/heroSection/HeroSubtitle';
+import { HeroStats } from '@/components/heroSection/HeroStats';
 
 export default function SobrePage() {
   return (
     <div className='flex min-h-screen flex-col'>
       {/* Hero Section */}
-      <HeroWrapper subpage>
-        <HeroImage />
+      <HeroWrapper>
+        <div className='flex flex-col justify-center'>
+          <HeroTopText>Nossa História</HeroTopText>
 
-        <HeroTextWrapper>
-          <HeroTitle>Quem Somos?</HeroTitle>
+          <HeroTitle>Quem Somos</HeroTitle>
+          <HeroSubtitle>Conheça nossa história e nosso propósito</HeroSubtitle>
+
           <HeroDescription>
-            Conheça nossa história, nossa missão e o impacto que estamos criando na
-            Guiné-Bissau.
+            A ONG DI MI PA BÔS nasceu com um propósito claro: transformar vidas por meio
+            de ações concretas e humanitárias na Guiné-Bissau.
           </HeroDescription>
-        </HeroTextWrapper>
-      </HeroWrapper>
 
-      {/* Quem Somos Section */}
-      <section className='py-16'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div className='text-center'>
-            <SectionTitle>Quem Somos</SectionTitle>
+          <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
+            <CTAButton text='Faça Parte' size='lg' />
 
-            <div className='mx-auto mt-6 max-w-3xl text-lg text-muted-foreground'>
-              <p className='mb-4 text-pretty'>
-                A ONG DI MI PA BÔS nasceu com um propósito claro: transformar vidas por
-                meio de ações concretas e humanitárias na Guiné-Bissau. Desde sua
-                fundação, nossa organização tem se dedicado a criar oportunidades para
-                pessoas em situação de vulnerabilidade, garantindo habitação digna,
-                assistência médica, apoio psicológico e social.
-              </p>
-              <p className='text-pretty'>
-                Mais do que uma ONG, somos uma família unida por empatia e solidariedade,
-                comprometida em oferecer amor, cuidado e dignidade àqueles que mais
-                precisam.
-              </p>
+            <Button asChild size='lg' variant='outline'>
+              <Link href='/projetos'>Nossos Projetos</Link>
+            </Button>
+          </div>
+
+          <div className='mt-10 flex items-center gap-4'>
+            <HeroStats value={2020} label='Ano de Fundação' />
+
+            <HeroStats value='500+' label='Vidas Impactadas' />
+
+            <HeroStats value='3' label='Anos de História' />
+          </div>
+        </div>
+        <div className='relative flex items-center justify-center'>
+          <div className='absolute -left-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl' />
+          <div className='absolute -right-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl' />
+          <div className='relative grid gap-6'>
+            <div className='overflow-hidden rounded-2xl bg-white shadow-2xl max-w-lg'>
+              <div className='aspect-video relative w-full'>
+                <Image
+                  fill
+                  src={logoGrande}
+                  alt='Fundação da ONG'
+                  className='h-full w-full object-contain rounded-t-xl z-10'
+                />
+                <Image
+                  fill
+                  src={logoGrande}
+                  alt='Fundação da ONG'
+                  className='h-full w-full object-cover z-0 rounded-t-xl blur-lg'
+                />
+              </div>
+              <div className='p-8'>
+                <h3 className='text-xl font-bold'>Nossa Essência</h3>
+                <p className='mt-2 text-muted-foreground'>
+                  Mais do que uma ONG, somos uma família unida por empatia e
+                  solidariedade, comprometida em oferecer amor, cuidado e dignidade.
+                </p>
+                <div className='mt-6 flex gap-4'>
+                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-primary/10'>
+                    <Heart className='h-6 w-6 text-primary' />
+                  </div>
+                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10'>
+                    <HandshakeIcon className='h-6 w-6 text-secondary' />
+                  </div>
+                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-accent/10'>
+                    <Eye className='h-6 w-6 text-accent-foreground' />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </HeroWrapper>
 
       {/* História Section */}
-      <section id='historia' className='bg-muted py-16'>
+      <section id='historia' className='bg-slate-50 py-16'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='grid gap-12 lg:grid-cols-2 lg:gap-8'>
             <div className='flex flex-col justify-center'>
@@ -80,12 +118,12 @@ export default function SobrePage() {
               </div>
             </div>
             <div className='relative'>
-              <div className='aspect-square overflow-hidden rounded-xl bg-gray-100'>
+              <div className='aspect-square overflow-hidden rounded-full drop-shadow-md'>
                 <Image
                   fill
-                  src={logoGrande}
+                  src={logo}
                   alt='Fundação da ONG'
-                  className='h-full w-full object-cover rounded-xl'
+                  className='h-full w-full object-cover rounded-full drop-shadow-sm'
                 />
               </div>
             </div>

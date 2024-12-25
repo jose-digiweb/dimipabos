@@ -63,8 +63,8 @@ export function Header() {
               key={item.name}
               href={item.href}
               className={cn(
-                'text-sm font-semibold leading-6 text-white hover:text-accent transition-colors',
-                { 'text-accent': isActive(item.href) }
+                'text-base font-semibold underline-offset-4 decoration-secondary leading-6 text-white hover:underline transition-colors',
+                { underline: isActive(item.href) }
               )}
             >
               {item.name}

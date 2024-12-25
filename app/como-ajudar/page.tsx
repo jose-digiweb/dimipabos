@@ -1,4 +1,4 @@
-import { Heart, Users, Handshake } from 'lucide-react';
+import { Heart, Users, Handshake, Building, UserPlus, Wallet } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { DonationSection } from '@/components/donation-section';
@@ -8,69 +8,94 @@ import { TestimonialSection } from '@/components/testimonial-section';
 
 import Image from 'next/image';
 import { SectionTitle, SectionDescription } from '@/components/section';
-import { CTASection } from '@/components/cta';
-import {
-  HeroTitle,
-  HeroDescription,
-  HeroImage,
-  HeroWrapper,
-  HeroTextWrapper,
-} from '@/components/heroSection';
+import { CTAButton, CTASection } from '@/components/cta';
 import Link from 'next/link';
 
-import heroImage from '@/assets/heroSection/hero_image.jpg';
+import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
+import {
+  HeroDescription,
+  HeroTitle,
+  HeroTopText,
+  HeroWrapper,
+} from '@/components/heroSection';
+import { HeroSubtitle } from '@/components/heroSection/HeroSubtitle';
+import { HeroStats } from '@/components/heroSection/HeroStats';
 
 export default function HelpPage() {
   return (
     <div className='flex min-h-dvh flex-col'>
       {/* Hero Section */}
-      <HeroWrapper subpage>
-        <HeroImage />
+      <HeroWrapper>
+        <div className='flex flex-col justify-center'>
+          <HeroTopText>Como Ajudar</HeroTopText>
 
-        <HeroTextWrapper>
-          <HeroTitle>Como Ajudar</HeroTitle>
+          <HeroTitle>Faça Parte da Mudança</HeroTitle>
+          <HeroSubtitle>Junte-se a nós e transforme vidas</HeroSubtitle>
+
           <HeroDescription>
-            Junte-se a nós e faça a diferença na vida de quem mais precisa.
+            Existem várias maneiras de contribuir com nossa causa. Sua ajuda é fundamental
+            para continuarmos transformando vidas na Guiné-Bissau.
           </HeroDescription>
-        </HeroTextWrapper>
-      </HeroWrapper>
 
-      {/* Introduction Section */}
-      <section className='bg-muted py-16'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div className='grid gap-12 lg:grid-cols-2'>
-            <div className='flex flex-col justify-center'>
-              <SectionTitle className='text-wrap'>
-                Junte-se a Nós e Faça a Diferença
-              </SectionTitle>
+          <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
+            <CTAButton size='lg' />
 
-              <div className='mt-6 space-y-6 text-lg text-muted-foreground'>
-                <p className='text-pretty'>
-                  Na DI MI PA BÔS, acreditamos que pequenos gestos podem transformar
-                  vidas. Nossa missão é proporcionar dignidade e esperança a pessoas em
-                  situação de vulnerabilidade na Guiné-Bissau, e seu apoio é fundamental
-                  para alcançarmos esse objetivo.
-                </p>
-                <p className='text-pretty'>
-                  Seja através de doações, voluntariado ou parcerias, cada contribuição
-                  faz a diferença. Juntos, podemos construir um futuro melhor para quem
-                  mais precisa.
-                </p>
-              </div>
-            </div>
-            <div className='relative'>
-              <div className='aspect-video overflow-hidden rounded-xl bg-gray-100'>
+            <Button asChild size='lg' variant='outline'>
+              <a href='#voluntario'>Seja Voluntário</a>
+            </Button>
+          </div>
+
+          <div className='mt-10 flex items-center gap-4'>
+            <HeroStats value='10+' label='Voluntários Ativos' />
+
+            <HeroStats value='5+' label='Empresas Parceiras' />
+          </div>
+        </div>
+        <div className='relative flex items-center justify-center'>
+          <div className='absolute -left-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-secondary/30 blur-3xl' />
+          <div className='absolute -right-12 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl' />
+          <div className='relative grid gap-6'>
+            <div className='overflow-hidden rounded-2xl bg-white shadow-2xl max-w-lg'>
+              <div className='aspect-video relative w-full'>
                 <Image
                   fill
-                  src={heroImage}
+                  priority
+                  src={projHabitacao}
                   alt='Impacto na comunidade'
                   className='h-full w-full object-cover'
                 />
               </div>
+              <div className='p-8'>
+                <h3 className='text-xl font-bold'>Como Você Pode Ajudar</h3>
+                <p className='mt-2 text-muted-foreground'>
+                  Escolha a forma que mais combina com você e faça parte desta
+                  transformação social.
+                </p>
+                <div className='mt-6 grid grid-cols-3 gap-4'>
+                  <div className='text-center'>
+                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10'>
+                      <Wallet className='h-6 w-6 text-primary' />
+                    </div>
+                    <p className='mt-2 text-sm font-medium'>Doe</p>
+                  </div>
+                  <div className='text-center'>
+                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10'>
+                      <UserPlus className='h-6 w-6 text-secondary' />
+                    </div>
+                    <p className='mt-2 text-sm font-medium'>Voluntarie-se</p>
+                  </div>
+                  <div className='text-center'>
+                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10'>
+                      <Building className='h-6 w-6 text-accent-foreground' />
+                    </div>
+                    <p className='mt-2 text-sm font-medium'>Seja Parceiro</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </HeroWrapper>
 
       {/* Ways to Help Section */}
       <section className='py-16'>
@@ -90,7 +115,7 @@ export default function HelpPage() {
 
               <h3 className='mt-4 text-xl font-bold'>Doe</h3>
 
-              <p className='mt-2 text-muted-foreground text-pretty'>
+              <p className='mt-2 text-pretty'>
                 Sua doação ajuda a construir casas, fornecer tratamentos e transformar
                 vidas.
               </p>
@@ -104,7 +129,7 @@ export default function HelpPage() {
               <Users className='size-12 text-secondary' />
 
               <h3 className='mt-4 text-xl font-bold'>Seja Voluntário</h3>
-              <p className='mt-2 text-muted-foreground text-pretty'>
+              <p className='mt-2 text-pretty'>
                 Dedique seu tempo e habilidades para fazer a diferença na vida de alguém.
               </p>
 
@@ -117,7 +142,7 @@ export default function HelpPage() {
               <Handshake className='size-12 text-secondary' />
 
               <h3 className='mt-4 text-xl font-bold'>Seja Parceiro</h3>
-              <p className='mt-2 text-muted-foreground text-pretty'>
+              <p className='mt-2 text-pretty'>
                 Sua empresa pode fazer parte desta transformação social.
               </p>
 
@@ -135,7 +160,7 @@ export default function HelpPage() {
       </section>
 
       {/* Volunteer Section */}
-      <section id='voluntario' className='bg-muted py-16 scroll-mt-8'>
+      <section id='voluntario' className='bg-slate-50 py-16 scroll-mt-8'>
         <VolunteerForm />
       </section>
 

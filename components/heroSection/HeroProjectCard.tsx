@@ -45,7 +45,7 @@ export const HeroProjectCard = ({ icon, title, children, href, className }: Prop
     <Card className={cn('flex flex-col', className)}>
       <CardHeader>
         <CardTitle className='flex items-center gap-2'>
-          <Icon className='size-6 text-secondary' />
+          <Icon className='size-6 text-primary' />
           <span>{title}</span>
         </CardTitle>
       </CardHeader>
@@ -53,7 +53,7 @@ export const HeroProjectCard = ({ icon, title, children, href, className }: Prop
         <p className='text-muted-foreground'>{children}</p>
         <Link
           href={href}
-          className='mt-4 inline-flex items-center text-sm font-medium text-secondary hover:text-secondary/90'
+          className='mt-4 inline-flex items-center font-medium text-primary hover:text-secondary/90'
         >
           Saiba mais
           <ArrowRight className='ml-1 size-4' />

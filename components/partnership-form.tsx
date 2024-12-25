@@ -68,21 +68,21 @@ export function PartnershipForm() {
 
           <ul className='mt-6 space-y-4'>
             <li className='flex items-start'>
-              <span className='mr-2 text-secondary'>•</span>
+              <span className='mr-2 text-primary'>•</span>
               <span>Impacto social direto na Guiné-Bissau</span>
             </li>
             <li className='flex items-start'>
-              <span className='mr-2 text-secondary'>•</span>
+              <span className='mr-2 text-primary'>•</span>
               <span>
                 Visibilidade e reconhecimento como empresa socialmente responsável
               </span>
             </li>
             <li className='flex items-start'>
-              <span className='mr-2 text-secondary'>•</span>
+              <span className='mr-2 text-primary'>•</span>
               <span>Relatórios detalhados sobre o impacto das ações</span>
             </li>
             <li className='flex items-start'>
-              <span className='mr-2 text-secondary'>•</span>
+              <span className='mr-2 text-primary'>•</span>
               <span>Oportunidades de engajamento dos colaboradores</span>
             </li>
           </ul>
@@ -91,19 +91,19 @@ export function PartnershipForm() {
 
           <ul className='mt-6 space-y-4'>
             <li className='flex items-start'>
-              <span className='mr-2 text-secondary'>•</span>
+              <span className='mr-2 text-primary'>•</span>
               <span>Doações financeiras regulares</span>
             </li>
             <li className='flex items-start'>
-              <span className='mr-2 text-secondary'>•</span>
+              <span className='mr-2 text-primary'>•</span>
               <span>Doações de materiais e equipamentos</span>
             </li>
             <li className='flex items-start'>
-              <span className='mr-2 text-secondary'>•</span>
+              <span className='mr-2 text-primary'>•</span>
               <span>Voluntariado corporativo</span>
             </li>
             <li className='flex items-start'>
-              <span className='mr-2 text-secondary'>•</span>
+              <span className='mr-2 text-primary'>•</span>
               <span>Projetos específicos e patrocínios</span>
             </li>
           </ul>

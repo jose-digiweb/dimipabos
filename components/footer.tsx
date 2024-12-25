@@ -8,7 +8,7 @@ export function Footer() {
         <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
           <div>
             <h3 className='text-lg font-semibold'>Sobre Nós</h3>
-            <p className='mt-4 text-sm text-primary-foreground/80'>
+            <p className='mt-4 text-sm text-primary-foreground'>
               A DI MI PA BÔS é uma ONG dedicada a transformar vidas através de habitação,
               cuidado e serviços essenciais na Guiné-Bissau.
             </p>
@@ -17,26 +17,17 @@ export function Footer() {
             <h3 className='text-lg font-semibold'>Links Rápidos</h3>
             <ul className='mt-4 space-y-2 text-sm'>
               <li>
-                <Link
-                  href='/sobre'
-                  className='text-primary-foreground/80 hover:text-primary-foreground'
-                >
+                <Link href='/sobre' className='hover:text-primary-foreground'>
                   Nossa História
                 </Link>
               </li>
               <li>
-                <Link
-                  href='/projetos'
-                  className='text-primary-foreground/80 hover:text-primary-foreground'
-                >
+                <Link href='/projetos' className='hover:text-primary-foreground'>
                   Projetos
                 </Link>
               </li>
               <li>
-                <Link
-                  href='/como-ajudar'
-                  className='text-primary-foreground/80 hover:text-primary-foreground'
-                >
+                <Link href='/como-ajudar' className='hover:text-primary-foreground'>
                   Como Ajudar
                 </Link>
               </li>
@@ -63,7 +54,7 @@ export function Footer() {
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://www.facebook.com/profile.php?id=100090763747200'
-                className='text-primary-foreground/80 border rounded-sm p-1 hover:text-primary-foreground'
+                className='border rounded-sm p-1 hover:text-primary-foreground'
               >
                 <Facebook className='size-6' />
                 <span className='sr-only'>Facebook</span>
@@ -72,7 +63,7 @@ export function Footer() {
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://wa.me/31631791165'
-                className='text-primary-foreground/80 border rounded-sm p-1 hover:text-primary-foreground'
+                className='border rounded-sm p-1 hover:text-primary-foreground'
               >
                 <MessageCircle className='size-6' />
                 <span className='sr-only'>WhatsApp</span>

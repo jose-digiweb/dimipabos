@@ -20,7 +20,7 @@ export const HeroTitle = ({ children, className }: Props) => {
   return (
     <h1
       className={cn(
-        'text-4xl font-bold text-pretty tracking-tight sm:text-5xl md:text-6xl',
+        'mt-6 text-4xl text-pretty font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl',
         className
       )}
     >
