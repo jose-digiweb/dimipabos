@@ -1,19 +1,19 @@
 const stats = [
   {
-    number: '500+',
-    label: 'Vidas Transformadas',
+    number: '30%',
+    label: 'Da Construção Concluída',
   },
   {
-    number: '10',
-    label: 'Casas Construídas',
-  },
-  {
-    number: '100',
+    number: '5',
     label: 'Voluntários Ativos',
   },
   {
+    number: '2020',
+    label: 'Ano de Fundação',
+  },
+  {
     number: '3',
-    label: 'Anos de Impacto Social',
+    label: 'Anos de História',
   },
 ];
 

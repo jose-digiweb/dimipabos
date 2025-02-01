@@ -18,7 +18,7 @@ import {
   HeroStats,
 } from '@/components/heroSection';
 
-import logo from '@/assets/dimipabos_logo.png';
+import logo from '@/assets/dimipabos_logo_2.png';
 
 export default function SobrePage() {
   return (
@@ -29,34 +29,40 @@ export default function SobrePage() {
           <HeroTopText>Nossa História</HeroTopText>
 
           <HeroTitle>Quem Somos</HeroTitle>
-          <HeroSubtitle>Conheça nossa história e nosso propósito</HeroSubtitle>
+          <HeroSubtitle>Construindo um futuro de esperança</HeroSubtitle>
 
           <HeroDescription>
-            A ONG DI MI PA BÔS nasceu com um propósito claro: transformar vidas por meio
-            de ações concretas e humanitárias na Guiné-Bissau.
+            A DI MI PA BÔS nasceu da urgente necessidade de oferecer tratamento adequado e
+            humanizado para pessoas em situação de dependência química na Guiné-Bissau.
+            Nossa missão é construir e operar o primeiro centro especializado do país.
           </HeroDescription>
 
           <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
-            <CTAButton text='Faça Parte' size='lg' />
+            <CTAButton text='Apoie Nossa Causa' size='lg' />
 
-            <Button asChild size='lg' variant='outline'>
-              <Link href='/projetos'>Nossos Projetos</Link>
+            <Button asChild size='lg' variant='outline' className='bg-white'>
+              <Link href='/projetos'>Conheça o Projeto</Link>
             </Button>
           </div>
 
           <div className='mt-10 flex items-center gap-4'>
             <HeroStats value={2020} label='Ano de Fundação' />
 
-            <HeroStats value='500+' label='Vidas Impactadas' />
+            <HeroStats value='30%' label='Da Construção Concluída' />
 
-            <HeroStats value='3' label='Anos de História' />
+            <HeroStats value='5' label='Voluntários Ativos' />
           </div>
         </div>
 
         <HeroCardSection>
-          <HeroCard variant='sobre' title='Nossa Essência' image={logo}>
-            Mais do que uma ONG, somos uma família unida por empatia e solidariedade,
-            comprometida em oferecer amor, cuidado e dignidade.
+          <HeroCard
+            variant='sobre'
+            title='Nossa Essência'
+            image={logo}
+            imageClassName='object-contain'
+          >
+            Trabalhamos incansavelmente para construir um espaço de acolhimento e
+            recuperação, onde cada pessoa possa encontrar apoio para recomeçar.
           </HeroCard>
         </HeroCardSection>
       </HeroWrapper>
@@ -64,33 +70,36 @@ export default function SobrePage() {
       {/* História Section */}
       <section id='historia' className='bg-slate-50 py-16'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div className='grid gap-12 lg:grid-cols-2 lg:gap-8'>
+          <div className='grid gap-12 md:grid-cols-[1fr,35%] lg:gap-8'>
             <div className='flex flex-col justify-center'>
               <SectionTitle>Nossa História</SectionTitle>
 
               <div className='mt-6 space-y-6 text-lg text-muted-foreground'>
                 <p className='text-pretty'>
-                  Fundada em 2020, a DI MI PA BÔS surgiu em resposta à crescente
-                  necessidade de apoio a pessoas marginalizadas, muitas delas enfrentando
-                  desafios como doenças físicas, mentais e dependência química. Em um
-                  cenário marcado pela escassez de recursos e infraestrutura limitada,
-                  percebemos que muitas pessoas estavam sendo deixadas à própria sorte.
+                  Em 2020, diante da crescente necessidade de apoio especializado para
+                  pessoas em situação de dependência química na Guiné-Bissau, um grupo de
+                  profissionais e voluntários se uniu para criar a DI MI PA BÔS.
                 </p>
                 <p className='text-pretty'>
-                  Com a ajuda de voluntários e doadores, temos construído não apenas
-                  casas, mas também sonhos. Hoje, nos orgulhamos de ter impactado mais de
-                  500 vidas e criado 10 habitações dignas, oferecendo um ambiente de
-                  conforto e respeito para aqueles que mais precisam.
+                  Identificamos que a falta de um centro especializado era um dos
+                  principais obstáculos para a recuperação efetiva. Assim nasceu nosso
+                  projeto principal: a construção do primeiro centro de tratamento e
+                  reabilitação do país.
+                </p>
+                <p className='text-pretty'>
+                  Hoje, com 30% da construção concluída, continuamos trabalhando para
+                  tornar esse sonho realidade. Cada tijolo colocado representa mais uma
+                  chance de transformação na vida de alguém.
                 </p>
               </div>
             </div>
-            <div className='relative'>
+            <div className='relative md:my-auto mx-auto md:mx-0 w-96 md:w-auto'>
               <div className='aspect-square overflow-hidden rounded-full drop-shadow-md'>
                 <Image
                   fill
                   src={logo}
                   alt='Fundação da ONG'
-                  className='h-full w-full object-cover rounded-full drop-shadow-sm'
+                  className='h-full w-full object-contain rounded-full drop-shadow-sm'
                 />
               </div>
             </div>
@@ -115,9 +124,9 @@ export default function SobrePage() {
               </CardHeader>
               <CardContent>
                 <p className='text-muted-foreground text-pretty'>
-                  Promover dignidade e qualidade de vida às pessoas em situação de
-                  vulnerabilidade, garantindo-lhes habitação, cuidado e acolhimento em um
-                  ambiente de respeito e solidariedade.
+                  Construir e operar o primeiro centro especializado em tratamento e
+                  reabilitação para pessoas em situação de dependência química na
+                  Guiné-Bissau, oferecendo acolhimento e cuidado humanizado.
                 </p>
               </CardContent>
             </Card>
@@ -131,8 +140,9 @@ export default function SobrePage() {
               </CardHeader>
               <CardContent>
                 <p className='text-muted-foreground text-pretty'>
-                  Um futuro onde todos os indivíduos na Guiné-Bissau tenham acesso a
-                  condições dignas de vida e oportunidades de desenvolvimento.
+                  Ser referência em tratamento e reabilitação na Guiné-Bissau,
+                  proporcionando um espaço de acolhimento, recuperação e renovação para
+                  quem precisa.
                 </p>
               </CardContent>
             </Card>
@@ -146,18 +156,9 @@ export default function SobrePage() {
               </CardHeader>
               <CardContent>
                 <ul className='space-y-2 text-muted-foreground'>
-                  <li>
-                    <strong>Empatia:</strong> Escutamos e entendemos as necessidades de
-                    cada pessoa que ajudamos.
-                  </li>
-                  <li>
-                    <strong>Solidariedade:</strong> Trabalhamos juntos para construir uma
-                    sociedade mais justa.
-                  </li>
-                  <li>
-                    <strong>Respeito:</strong> Reconhecemos o valor e a dignidade de todos
-                    os seres humanos.
-                  </li>
+                  <li>Empatia e Respeito no acolhimento</li>
+                  <li>Transparência em nossas ações</li>
+                  <li>Compromisso com a recuperação</li>
                 </ul>
               </CardContent>
             </Card>
@@ -181,17 +182,19 @@ export default function SobrePage() {
           <div className='mt-16 grid gap-8 md:grid-cols-3'>
             {[
               {
-                title: 'Habitação Digna',
-                description: 'Construímos casas para pessoas que não têm onde morar.',
-              },
-              {
-                title: 'Cuidado Integral',
-                description: 'Prestamos assistência médica e psicológica.',
-              },
-              {
-                title: 'Apoio Social',
+                title: 'Transparência',
                 description:
-                  'Oferecemos suporte e reintegração para dependentes químicos e pessoas com limitações físicas ou mentais.',
+                  'Prestação de contas clara sobre o uso dos recursos e andamento da construção.',
+              },
+              {
+                title: 'Qualidade',
+                description:
+                  'Construção e implementação de um centro com estrutura adequada e equipe capacitada.',
+              },
+              {
+                title: 'Impacto Social',
+                description:
+                  'Compromisso com a transformação efetiva de vidas através do tratamento especializado.',
               },
             ].map((item, index) => (
               <Card key={index}>
@@ -207,12 +210,12 @@ export default function SobrePage() {
 
           <div className='mt-16 text-center'>
             <p className='mx-auto max-w-2xl text-lg text-muted-foreground text-pretty'>
-              Acreditamos que cada gesto, por menor que seja, pode transformar uma vida. É
-              essa convicção que guia nossas ações e nos motiva a fazer mais todos os
-              dias.
+              Acreditamos que a recuperação é possível quando há estrutura adequada,
+              tratamento especializado e apoio contínuo. É por isso que trabalhamos
+              incansavelmente na construção do nosso centro.
             </p>
             <div className='mt-8'>
-              <CTAButton text='Faça Parte Desta Mudança' />
+              <CTAButton text='Apoie essa causa' />
             </div>
           </div>
         </div>

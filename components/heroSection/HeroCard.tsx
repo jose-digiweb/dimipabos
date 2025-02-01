@@ -23,6 +23,7 @@ type Props = {
   image: ImageProps['src'];
   variant: 'home' | 'sobre' | 'projetos' | 'contato' | 'ajudar';
   className?: string;
+  imageClassName?: string;
 };
 
 /**
@@ -38,6 +39,7 @@ export const HeroCard = ({
   image,
   children,
   className,
+  imageClassName,
 }: Props) => {
   return (
     <div
@@ -52,7 +54,7 @@ export const HeroCard = ({
           priority
           src={image}
           alt='Impacto na comunidade'
-          className='h-full w-full object-cover'
+          className={cn('h-full w-full object-cover', imageClassName)}
         />
       </div>
       <div className='p-8'>

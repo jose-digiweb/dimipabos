@@ -11,7 +11,7 @@ import {
   HeroTopText,
   HeroWrapper,
 } from '@/components/heroSection';
-import { HeroStats } from '@/components/heroSection/HeroStats';
+import { CTASection } from '@/components/cta';
 
 export default function ContactPage() {
   return (
@@ -52,12 +52,6 @@ export default function ContactPage() {
               </a>
             </Button>
           </div>
-
-          <div className='mt-10 flex items-center gap-4'>
-            <HeroStats value='200+' label='Vidas Impactadas' />
-
-            <HeroStats value='24/7' label='Suporte Disponível' />
-          </div>
         </div>
 
         <HeroCardSection>
@@ -94,21 +88,6 @@ export default function ContactPage() {
           </div>
         </HeroCardSection>
       </HeroWrapper>
-
-      <section className='bg-slate-50 py-16'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div className='text-center'>
-            <h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
-              Estamos Aqui para Ajudar
-            </h2>
-            <p className='mx-auto mt-4 max-w-2xl text-lg text-muted-foreground'>
-              Nossa equipe está pronta para responder suas dúvidas, fornecer informações
-              sobre nossos serviços ou discutir possíveis parcerias. Entre em contato
-              conosco.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Form and Information */}
       <section id='enviar-mensagem' className='py-16 scroll-mt-8'>
@@ -196,6 +175,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection className='border-b' />
     </div>
   );
 }

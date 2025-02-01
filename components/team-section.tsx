@@ -34,7 +34,8 @@ export function TeamSection() {
         <div className='text-center'>
           <SectionTitle>Nossa Equipe</SectionTitle>
           <SectionDescription>
-            Conheça as pessoas dedicadas que fazem a diferença todos os dias.
+            Conheça as pessoas dedicadas que trabalham para tornar o centro de tratamento
+            uma realidade.
           </SectionDescription>
         </div>
 

@@ -5,7 +5,7 @@ import { VolunteerForm } from '@/components/volunteer-form';
 import { PartnershipForm } from '@/components/partnership-form';
 import { TestimonialSection } from '@/components/testimonial-section';
 import { SectionTitle, SectionDescription } from '@/components/section';
-import { CTAButton, CTASection } from '@/components/cta';
+import { CTASection } from '@/components/cta';
 import Link from 'next/link';
 import {
   HeroDescription,
@@ -28,26 +28,18 @@ export default function HelpPage() {
         <div className='flex flex-col justify-center'>
           <HeroTopText>Como Ajudar</HeroTopText>
 
-          <HeroTitle>Faça Parte da Mudança</HeroTitle>
-          <HeroSubtitle>Junte-se a nós e transforme vidas</HeroSubtitle>
+          <HeroTitle>Faça Parte Desta Construção</HeroTitle>
+          <HeroSubtitle>Ajude a Construir Esperança</HeroSubtitle>
 
           <HeroDescription>
-            Existem várias maneiras de contribuir com nossa causa. Sua ajuda é fundamental
-            para continuarmos transformando vidas na Guiné-Bissau.
+            Sua contribuição é fundamental para concluirmos a construção do centro e
+            começarmos a transformar vidas. Cada tijolo conta, cada ajuda importa..
           </HeroDescription>
 
-          <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
-            <CTAButton size='lg' />
-
-            <Button asChild size='lg' variant='outline'>
-              <a href='#voluntario'>Seja Voluntário</a>
-            </Button>
-          </div>
-
           <div className='mt-10 flex items-center gap-4'>
-            <HeroStats value='10+' label='Voluntários Ativos' />
+            <HeroStats value='5' label='Voluntários Ativos' />
 
-            <HeroStats value='5+' label='Empresas Parceiras' />
+            <HeroStats value='2+' label='Parcerias Ativas' />
           </div>
         </div>
 
@@ -78,8 +70,8 @@ export default function HelpPage() {
               <h3 className='mt-4 text-xl font-bold'>Doe</h3>
 
               <p className='mt-2 text-pretty'>
-                Sua doação ajuda a construir casas, fornecer tratamentos e transformar
-                vidas.
+                Sua doação ajuda a manter nossos programas de tratamento e acompanhamento
+                pós-reabilitação.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -92,7 +84,8 @@ export default function HelpPage() {
 
               <h3 className='mt-4 text-xl font-bold'>Seja Voluntário</h3>
               <p className='mt-2 text-pretty'>
-                Dedique seu tempo e habilidades para fazer a diferença na vida de alguém.
+                Ajude em nossos programas de acompanhamento e suporte emocional aos
+                pacientes.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -105,7 +98,7 @@ export default function HelpPage() {
 
               <h3 className='mt-4 text-xl font-bold'>Seja Parceiro</h3>
               <p className='mt-2 text-pretty'>
-                Sua empresa pode fazer parte desta transformação social.
+                Apoie nosso trabalho de reintegração social e manutenção da sobriedade.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -135,7 +128,7 @@ export default function HelpPage() {
       <TestimonialSection />
 
       {/* CTA Section */}
-      <CTASection />
+      <CTASection className='border-b' />
     </div>
   );
 }

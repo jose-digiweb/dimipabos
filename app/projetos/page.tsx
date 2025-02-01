@@ -1,7 +1,7 @@
 import { ImpactNumbers } from '@/components/impact-numbers';
 import { SectionTitle, SectionDescription } from '@/components/section';
 import { CTASection, CTAButton } from '@/components/cta';
-import { ProjectCard, ProjectGrid } from '@/components/projects';
+import { ProjectCard } from '@/components/projects';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import {
@@ -12,7 +12,6 @@ import {
   HeroSubtitle,
   HeroCard,
   HeroCardSection,
-  HeroStats,
 } from '@/components/heroSection';
 
 import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
@@ -21,20 +20,20 @@ import projEdu from '@/assets/projectos/proj_educacao.jpeg';
 
 const featuredProjects = [
   {
-    title: 'Construção de Habitações Dignas',
-    description: 'Desde 2020, já construímos 10 casas para famílias vulneráveis.',
+    title: 'Centro de Reabilitação',
+    description: 'Tratamento especializado com equipe multidisciplinar.',
     image: projHabitacao,
     link: '/projetos/#',
   },
   {
-    title: 'Reabilitação e Apoio',
-    description: 'Programa de reabilitação e suporte para dependentes químicos.',
+    title: 'Programa Terapêutico',
+    description: 'Tratamento intensivo e acompanhamento personalizado.',
     image: projReab,
     link: '/projetos/#',
   },
   {
-    title: 'Educação e Capacitação',
-    description: 'Oficinas de costura, carpintaria e alfabetização para adultos.',
+    title: 'Programa de Monitoramento',
+    description: 'Acompanhamento contínuo para prevenção de recaídas.',
     image: projEdu,
     link: '/projetos/#',
   },
@@ -46,39 +45,40 @@ export default function ProjectsPage() {
       {/* Hero Section */}
       <HeroWrapper>
         <div className='flex flex-col justify-center'>
-          <HeroTopText> Nossos Projetos</HeroTopText>
+          <HeroTopText>Nossos Projetos</HeroTopText>
 
-          <HeroTitle>Transformando Vidas</HeroTitle>
-          <HeroSubtitle>
-            Conheça os projetos que estão mudando a Guiné-Bissau
-          </HeroSubtitle>
+          <HeroTitle>Recuperação e Vida Nova</HeroTitle>
+          <HeroSubtitle>Conheça nossos programas de reabilitação</HeroSubtitle>
 
           <HeroDescription>
-            Através de nossas iniciativas, estamos construindo um futuro melhor para
-            aqueles que mais precisam, oferecendo moradia, reabilitação e educação.
+            Através de nossos projetos, oferecemos um caminho completo para a recuperação,
+            desde o acolhimento inicial até o acompanhamento pós-tratamento, garantindo
+            uma reintegração segura e duradoura.
           </HeroDescription>
 
           <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
             <CTAButton text='Apoie Nossos Projetos' size='lg' />
 
-            <Button asChild size='lg' variant='outline'>
+            <Button asChild size='lg' variant='outline' className='bg-white'>
               <Link href='/como-ajudar#voluntario'>Seja Voluntário</Link>
             </Button>
           </div>
 
-          <div className='mt-10 flex items-center gap-4'>
-            <HeroStats value={10} label='Casas Construídas' />
+          {/* <div className='mt-10 flex items-center gap-4'>
+            <HeroStats value='10+' label='Profissionais' />
 
-            <HeroStats value='30+' label='Pessoas em Reabilitação' />
-
-            <HeroStats value='50+' label='Alunos em Formação' />
-          </div>
+            <HeroStats value='85%' label='Taxa de reabilitação' />
+          </div> */}
         </div>
 
         <HeroCardSection>
-          <HeroCard variant='projetos' title='Áreas de Atuação' image={projReab}>
-            Nossos projetos focam em três pilares fundamentais: habitação, reabilitação e
-            educação.
+          <HeroCard
+            variant='projetos'
+            title='Nossos Programas
+'
+            image={projReab}
+          >
+            Tratamento especializado e humanizado para dependência química.
           </HeroCard>
         </HeroCardSection>
       </HeroWrapper>
@@ -106,10 +106,10 @@ export default function ProjectsPage() {
       <ImpactNumbers />
 
       {/* Project Gallery */}
-      <ProjectGrid />
+      {/* <ProjectGrid /> */}
 
       {/* CTA Section */}
-      <CTASection />
+      <CTASection className='border-b' />
     </div>
   );
 }
