@@ -2,7 +2,7 @@ type ProjectStatus = 'captacao' | 'planejamento' | 'andamento' | 'concluido';
 
 export type ProjectType = {
   id: string;
-  name: string;
+  slug: string;
   title: string;
   status: ProjectStatus;
   description: string;
@@ -25,7 +25,7 @@ export type ProjectType = {
 export const projects: ProjectType[] = [
   {
     id: 'centro-tratamento',
-    name: 'centro-tratamento',
+    slug: 'centro-tratamento',
     title: 'Centro de Tratamento e Reabilitação',
     status: 'captacao',
     description:

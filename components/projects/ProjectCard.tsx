@@ -49,7 +49,7 @@ export const ProjectCard = ({ project, className }: Props) => {
       <CardFooter className=''>
         <Button asChild variant='CTA' className='group'>
           <Link
-            href={`/projetos/${project.id}`}
+            href={`/projetos/${project.slug}`}
             className='inline-flex group items-center'
           >
             Leia Mais

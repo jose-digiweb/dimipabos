@@ -9,17 +9,17 @@ import { projects } from '@/lib/data';
 import { CTASection } from '@/components/cta';
 
 interface ProjectPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
-async function getProject(id: string) {
-  return projects.find(project => project.id === id);
+async function getProject(slug: string) {
+  return projects.find(project => project.slug === slug);
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project = await getProject(params.id);
+  const slug = (await params).slug;
+
+  const project = await getProject(slug);
 
   if (!project) {
     notFound();
