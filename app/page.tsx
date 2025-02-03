@@ -14,7 +14,7 @@ import {
 } from '@/components/heroSection';
 import { HomeProjectCard } from '@/components/HomeProjectCard';
 
-import heroImage from '@/assets/heroSection/hero_image.jpg';
+import cardImage from '@/assets/dimipabos_logo_2.png';
 import { Building2, Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -42,14 +42,19 @@ export default function Page() {
           </div>
 
           <div className='mt-10 flex items-center gap-4'>
-            <HeroStats value='30%' label='da Construção Concluída' />
+            <HeroStats value='10%' label='da Construção Concluída' />
 
             <HeroStats value={5} label='Voluntários Ativos' />
           </div>
         </div>
 
         <HeroCardSection>
-          <HeroCard variant='home' title='Nossa Essência' image={heroImage}>
+          <HeroCard
+            variant='home'
+            title='Nossa Essência'
+            image={cardImage}
+            imageClassName='object-contain'
+          >
             Trabalhamos incansavelmente para construir um espaço de acolhimento e
             recuperação, onde cada pessoa possa encontrar apoio para recomeçar.
           </HeroCard>
@@ -98,10 +103,10 @@ export default function Page() {
               </SectionDescription>
               <div className='mt-8'>
                 <div className='relative h-4 w-full overflow-hidden rounded-full bg-muted'>
-                  <div className='h-full w-[30%] rounded-full bg-secondary' />
+                  <div className='h-full w-[10%] rounded-full bg-secondary' />
                 </div>
                 <div className='mt-4 flex justify-between text-sm'>
-                  <span className='font-medium'>30% Concluído</span>
+                  <span className='font-medium'>10% Concluído</span>
                   <span className='text-muted-foreground'>Meta: 100%</span>
                 </div>
               </div>

@@ -1,19 +1,15 @@
 // Dependencies
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import Image, { type ImageProps } from 'next/image';
+import Image from 'next/image';
 import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 
 // Types
-type Project = {
-  title: string;
-  description: string;
-  image: ImageProps['src'];
-  link: string;
-};
+import type { ProjectType } from '@/lib/data';
+import Link from 'next/link';
 type Props = {
-  project: Project;
+  project: ProjectType;
   className?: string;
 };
 
@@ -52,10 +48,13 @@ export const ProjectCard = ({ project, className }: Props) => {
 
       <CardFooter className=''>
         <Button asChild variant='CTA' className='group'>
-          <span className='inline-flex group items-center'>
+          <Link
+            href={`/projetos/${project.id}`}
+            className='inline-flex group items-center'
+          >
             Leia Mais
             <ArrowRight className='ml-2 size-4 group-hover:scale-125 group-hover:translate-x-1 transition-all' />
-          </span>
+          </Link>
         </Button>
       </CardFooter>
     </Card>

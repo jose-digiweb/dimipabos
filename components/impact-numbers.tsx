@@ -1,6 +1,6 @@
 const stats = [
   {
-    number: '30%',
+    number: '10%',
     label: 'Da Construção Concluída',
   },
   {
@@ -8,7 +8,7 @@ const stats = [
     label: 'Voluntários Ativos',
   },
   {
-    number: '2020',
+    number: '2021',
     label: 'Ano de Fundação',
   },
   {

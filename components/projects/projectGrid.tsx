@@ -8,7 +8,7 @@ import projEdu from '@/assets/projectos/proj_educacao.jpeg';
 const featuredProjects = [
   {
     title: 'Construção de Habitações Dignas',
-    description: 'Desde 2020, já construímos 10 casas para famílias vulneráveis.',
+    description: 'Desde 2021, já construímos 10 casas para famílias vulneráveis.',
     image: projHabitacao,
     link: '/projetos/habitacao',
   },

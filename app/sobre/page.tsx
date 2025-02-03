@@ -46,9 +46,9 @@ export default function SobrePage() {
           </div>
 
           <div className='mt-10 flex items-center gap-4'>
-            <HeroStats value={2020} label='Ano de Fundação' />
+            <HeroStats value={2021} label='Ano de Fundação' />
 
-            <HeroStats value='30%' label='Da Construção Concluída' />
+            <HeroStats value='10%' label='Da Construção Concluída' />
 
             <HeroStats value='5' label='Voluntários Ativos' />
           </div>
@@ -76,20 +76,29 @@ export default function SobrePage() {
 
               <div className='mt-6 space-y-6 text-lg text-muted-foreground'>
                 <p className='text-pretty'>
-                  Em 2020, diante da crescente necessidade de apoio especializado para
-                  pessoas em situação de dependência química na Guiné-Bissau, um grupo de
-                  profissionais e voluntários se uniu para criar a DI MI PA BÔS.
+                  A ONG DI MI PA BÔS nasceu em 2021 com um propósito simples, mas
+                  essencial: levar ajuda a quem mais precisa. Inicialmente, nosso foco
+                  estava em doações, fornecendo apoio básico para pessoas em situação de
+                  vulnerabilidade na Guiné-Bissau. No entanto, ao longo do nosso trabalho,
+                  percebemos uma necessidade ainda maior — um espaço seguro e estruturado
+                  para acolher e tratar pessoas que lutam contra a dependência química.
                 </p>
                 <p className='text-pretty'>
-                  Identificamos que a falta de um centro especializado era um dos
-                  principais obstáculos para a recuperação efetiva. Assim nasceu nosso
-                  projeto principal: a construção do primeiro centro de tratamento e
-                  reabilitação do país.
+                  Dessa constatação, surgiu o nosso grande projeto: a construção de um
+                  centro de acolhimento e tratamento para pessoas que enfrentam desafios
+                  com o uso de substâncias. Esse centro será um lugar onde elas poderão se
+                  recuperar com dignidade, recebendo tratamento adequado e um
+                  acompanhamento contínuo para garantir sua reabilitação e reintegração à
+                  sociedade.
                 </p>
                 <p className='text-pretty'>
-                  Hoje, com 30% da construção concluída, continuamos trabalhando para
-                  tornar esse sonho realidade. Cada tijolo colocado representa mais uma
-                  chance de transformação na vida de alguém.
+                  Ainda estamos em fase de construção, mas cada passo que damos é movido
+                  pelo compromisso de transformar vidas. Com o apoio da comunidade,
+                  parceiros e doadores, estamos construindo um futuro onde mais pessoas
+                  tenham a chance de recomeçar.
+                </p>
+                <p className='text-pretty'>
+                  Junte-se a nós nessa missão e ajude a tornar esse sonho realidade! 💙✨
                 </p>
               </div>
             </div>

@@ -14,30 +14,9 @@ import {
   HeroCardSection,
 } from '@/components/heroSection';
 
-import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
 import projReab from '@/assets/projectos/proj_reab.jpeg';
-import projEdu from '@/assets/projectos/proj_educacao.jpeg';
 
-const featuredProjects = [
-  {
-    title: 'Centro de Reabilitação',
-    description: 'Tratamento especializado com equipe multidisciplinar.',
-    image: projHabitacao,
-    link: '/projetos/#',
-  },
-  {
-    title: 'Programa Terapêutico',
-    description: 'Tratamento intensivo e acompanhamento personalizado.',
-    image: projReab,
-    link: '/projetos/#',
-  },
-  {
-    title: 'Programa de Monitoramento',
-    description: 'Acompanhamento contínuo para prevenção de recaídas.',
-    image: projEdu,
-    link: '/projetos/#',
-  },
-];
+import { projects } from '@/lib/data';
 
 export default function ProjectsPage() {
   return (
@@ -95,7 +74,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className='mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
-            {featuredProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <ProjectCard key={index} project={project} />
             ))}
           </div>
