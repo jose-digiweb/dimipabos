@@ -72,7 +72,7 @@ export default function SobrePage() {
       {/* História Section */}
       <section id='historia' className='bg-slate-50 py-16'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div className='grid gap-12 md:grid-cols-[1fr,35%] lg:gap-8'>
+          <div className='grid gap-12 md:grid-cols-[1fr_35%] lg:gap-8'>
             <div className='flex flex-col justify-center'>
               <SectionTitle>Nossa História</SectionTitle>
 
@@ -113,7 +113,7 @@ export default function SobrePage() {
                   fill
                   src={logo}
                   alt='Fundação da ONG'
-                  className='h-full w-full object-contain rounded-full drop-shadow-sm'
+                  className='h-full w-full object-contain rounded-full drop-shadow-xs'
                 />
               </div>
             </div>

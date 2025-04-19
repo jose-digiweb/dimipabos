@@ -29,7 +29,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
         {images.map((image, index) => (
           <Card
             key={index}
-            className='group relative aspect-[4/3] cursor-pointer overflow-hidden'
+            className='group relative aspect-4/3 cursor-pointer overflow-hidden'
             onClick={() => {
               setCurrentImage(index);
               setShowLightbox(true);
@@ -56,7 +56,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
             >
               <X className='h-6 w-6' />
             </Button>
-            <div className='relative aspect-[4/3] min-h-[300px] w-full min-w-[300px] md:min-h-[500px] md:min-w-[500px]'>
+            <div className='relative aspect-4/3 min-h-[300px] w-full min-w-[300px] md:min-h-[500px] md:min-w-[500px]'>
               <Image
                 src={images[currentImage] || '/placeholder.svg'}
                 alt={`Imagem ${currentImage + 1}`}

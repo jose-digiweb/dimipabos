@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "wlogin": "wrangler login"
+    "wlogin": "wrangler login",
+    "format": "ultracite format",
+    "format:check": "biome check --fix --unsafe"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.787.0",
@@ -36,14 +38,14 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
     "@types/node": "^20.17.16",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "15.3.1",
-    "postcss": "^8.5.1",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3"
+    "biome": "^0.3.3",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.7.3",
+    "ultracite": "^4.1.20"
   },
   "overrides": {
     "@types/react": "19.1.2",

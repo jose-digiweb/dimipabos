@@ -21,7 +21,7 @@ export const HeroWrapper = ({ children, className }: Props) => {
   return (
     <section
       className={cn(
-        'relative overflow-hidden bg-gradient-to-b from-primary/5 to-primary/10',
+        'relative overflow-hidden bg-linear-to-b from-primary/5 to-primary/10',
         className
       )}
     >

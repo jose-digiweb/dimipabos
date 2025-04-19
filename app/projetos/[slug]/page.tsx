@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <div className='min-h-screen'>
-      <section className='relative overflow-hidden bg-gradient-to-b from-primary/5 to-primary/10 py-24'>
+      <section className='relative overflow-hidden bg-linear-to-b from-primary/5 to-primary/10 py-24'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
           <div className='flex flex-col items-center text-center'>
             <Link

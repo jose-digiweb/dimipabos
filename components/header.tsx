@@ -89,7 +89,7 @@ export function Header() {
                   <Menu className='size-10' aria-hidden='true' />
                 </Button>
               </SheetTrigger>
-              <SheetContent side='right' className='w-full backdrop-blur-sm bg-slate-50'>
+              <SheetContent side='right' className='w-full backdrop-blur-xs bg-slate-50'>
                 <div className='mt-6 flow-root'>
                   <SheetTitle className='sr-only'>The mobile menu</SheetTitle>
                   <SheetDescription className='sr-only'>
@@ -106,7 +106,7 @@ export function Header() {
                           className={cn(
                             '-mx-3 block rounded-md px-3 py-2 text-base font-semibold leading-7 text-foreground',
                             {
-                              'text-primary bg-blue-50 shadow-sm drop-shadow-sm':
+                              'text-primary bg-blue-50 shadow-xs drop-shadow-xs':
                                 isActive(item.href),
                             }
                           )}
