@@ -13,16 +13,7 @@ import {
   HeroCardSection,
 } from '@/components/heroSection';
 import { HomeProjectCard } from '@/components/HomeProjectCard';
-
 import cardImage from '@/assets/dimipabos_logo_2.png';
-import { Building2, Users } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '@/components/ui/carousel';
-import Image from 'next/image';
 import { ImageCarousel } from '@/components/image-carousel';
 import { Suspense } from 'react';
 

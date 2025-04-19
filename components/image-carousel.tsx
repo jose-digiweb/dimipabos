@@ -8,11 +8,6 @@ import {
 } from './ui/carousel';
 import Image from 'next/image';
 
-// Types
-type Props = {
-  className?: string;
-};
-
 /**
  * The ImageCarousel component
  * @description Will render the ImageCarousel

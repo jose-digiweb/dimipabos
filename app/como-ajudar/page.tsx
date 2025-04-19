@@ -1,6 +1,5 @@
 import { Heart, Users, Handshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { DonationSection } from '@/components/donation-section';
 import { VolunteerForm } from '@/components/volunteer-form';
 import { PartnershipForm } from '@/components/partnership-form';
 import { TestimonialSection } from '@/components/testimonial-section';
