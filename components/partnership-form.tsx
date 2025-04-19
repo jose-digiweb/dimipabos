@@ -15,8 +15,8 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { SectionTitle } from './section/SectionTitle';
-import { SectionDescription } from './section/SectionDescription';
+import { SectionTitle } from './ui/section/SectionTitle';
+import { SectionDescription } from './ui/section/SectionDescription';
 
 const formSchema = z.object({
   companyName: z.string().min(2, {
@@ -57,8 +57,8 @@ export function PartnershipForm() {
       <div className='text-center'>
         <SectionTitle>Seja Nosso Parceiro</SectionTitle>
         <SectionDescription>
-          Sua empresa pode fazer parte desta transformação social. Entre em contato
-          conosco.
+          Sua empresa pode fazer parte desta transformação social. Entre em
+          contato conosco.
         </SectionDescription>
       </div>
 
@@ -74,7 +74,8 @@ export function PartnershipForm() {
             <li className='flex items-start'>
               <span className='mr-2 text-primary'>•</span>
               <span>
-                Visibilidade e reconhecimento como empresa socialmente responsável
+                Visibilidade e reconhecimento como empresa socialmente
+                responsável
               </span>
             </li>
             <li className='flex items-start'>
@@ -119,7 +120,10 @@ export function PartnershipForm() {
                   <FormItem>
                     <FormLabel>Nome da Empresa</FormLabel>
                     <FormControl>
-                      <Input placeholder='Digite o nome da empresa' {...field} />
+                      <Input
+                        placeholder='Digite o nome da empresa'
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -133,7 +137,10 @@ export function PartnershipForm() {
                   <FormItem>
                     <FormLabel>Nome do Contato</FormLabel>
                     <FormControl>
-                      <Input placeholder='Digite o nome do contato' {...field} />
+                      <Input
+                        placeholder='Digite o nome do contato'
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

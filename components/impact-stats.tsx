@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { SectionTitle } from './section/SectionTitle';
-import { SectionDescription } from './section/SectionDescription';
+import { SectionTitle } from './ui/section/SectionTitle';
+import { SectionDescription } from './ui/section/SectionDescription';
 
 const stats = [
   {

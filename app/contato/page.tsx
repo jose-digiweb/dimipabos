@@ -1,8 +1,15 @@
-import { Mail, Phone, MapPin, Facebook, MessageCircle, ArrowRight } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  MessageCircle,
+  ArrowRight,
+} from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { SectionTitle, SectionDescription } from '@/components/section';
+import { SectionTitle, SectionDescription } from '@/components/ui/section';
 import Link from 'next/link';
 import {
   HeroCardSection,
@@ -29,8 +36,8 @@ export default function ContactPage() {
           </HeroTitle>
 
           <HeroDescription>
-            Estamos aqui para ajudar. Nossa equipe está pronta para responder suas dúvidas
-            e ouvir suas sugestões.
+            Estamos aqui para ajudar. Nossa equipe está pronta para responder
+            suas dúvidas e ouvir suas sugestões.
           </HeroDescription>
 
           <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
@@ -63,7 +70,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className='font-medium'>Email</p>
-                  <p className='text-sm text-muted-foreground'>contato@dimipabos.org</p>
+                  <p className='text-sm text-muted-foreground'>
+                    contato@dimipabos.org
+                  </p>
                 </div>
               </div>
               <div className='flex items-center gap-4'>
@@ -72,7 +81,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className='font-medium'>Telefone</p>
-                  <p className='text-sm text-muted-foreground'>+31 631 791 165</p>
+                  <p className='text-sm text-muted-foreground'>
+                    +31 631 791 165
+                  </p>
                 </div>
               </div>
               <div className='flex items-center gap-4'>
@@ -81,7 +92,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className='font-medium'>Endereço</p>
-                  <p className='text-sm text-muted-foreground'>Bissau, Guiné-Bissau</p>
+                  <p className='text-sm text-muted-foreground'>
+                    Bissau, Guiné-Bissau
+                  </p>
                 </div>
               </div>
             </div>
@@ -98,8 +111,8 @@ export default function ContactPage() {
               <SectionTitle>Envie uma Mensagem</SectionTitle>
 
               <SectionDescription className='mx-0'>
-                Preencha o formulário abaixo para entrar em contato conosco. Responderemos
-                o mais breve possível.
+                Preencha o formulário abaixo para entrar em contato conosco.
+                Responderemos o mais breve possível.
               </SectionDescription>
 
               <div className='mt-8'>
@@ -118,7 +131,9 @@ export default function ContactPage() {
                     <Mail className='size text-secondary' />
                     <div>
                       <h3 className='font-semibold'>E-mail</h3>
-                      <p className='mt-1 text-muted-foreground'>contato@dimipabos.org</p>
+                      <p className='mt-1 text-muted-foreground'>
+                        contato@dimipabos.org
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -128,7 +143,9 @@ export default function ContactPage() {
                     <Phone className='size text-secondary' />
                     <div>
                       <h3 className='font-semibold'>Telefone</h3>
-                      <p className='mt-1 text-muted-foreground'>+31 631 791 165</p>
+                      <p className='mt-1 text-muted-foreground'>
+                        +31 631 791 165
+                      </p>
                     </div>
                   </CardContent>
                 </Card>

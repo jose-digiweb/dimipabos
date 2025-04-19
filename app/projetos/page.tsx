@@ -1,5 +1,5 @@
 import { ImpactNumbers } from '@/components/impact-numbers';
-import { SectionTitle, SectionDescription } from '@/components/section';
+import { SectionTitle, SectionDescription } from '@/components/ui/section';
 import { CTASection, CTAButton } from '@/components/cta';
 import { ProjectCard } from '@/components/projects';
 import { Button } from '@/components/ui/button';
@@ -30,9 +30,9 @@ export default function ProjectsPage() {
           <HeroSubtitle>Conheça nossos programas de reabilitação</HeroSubtitle>
 
           <HeroDescription>
-            Através de nossos projetos, oferecemos um caminho completo para a recuperação,
-            desde o acolhimento inicial até o acompanhamento pós-tratamento, garantindo
-            uma reintegração segura e duradoura.
+            Através de nossos projetos, oferecemos um caminho completo para a
+            recuperação, desde o acolhimento inicial até o acompanhamento
+            pós-tratamento, garantindo uma reintegração segura e duradoura.
           </HeroDescription>
 
           <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
@@ -68,8 +68,8 @@ export default function ProjectsPage() {
           <div className='text-center'>
             <SectionTitle>Projetos em Destaque</SectionTitle>
             <SectionDescription>
-              Conheça nossos principais projetos e o impacto que estamos gerando na
-              comunidade.
+              Conheça nossos principais projetos e o impacto que estamos gerando
+              na comunidade.
             </SectionDescription>
           </div>
 

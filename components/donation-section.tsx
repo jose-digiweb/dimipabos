@@ -31,8 +31,8 @@ const formSchema = z.object({
   frequency: z.enum(['single', 'monthly']),
 });
 
-import { SectionTitle } from './section/SectionTitle';
-import { SectionDescription } from './section/SectionDescription';
+import { SectionTitle } from './ui/section/SectionTitle';
+import { SectionDescription } from './ui/section/SectionDescription';
 import { CTAButton } from './cta';
 
 export function DonationSection() {
@@ -52,8 +52,8 @@ export function DonationSection() {
       <div className='text-center'>
         <SectionTitle>Faça Sua Doação</SectionTitle>
         <SectionDescription>
-          Sua contribuição é fundamental para construirmos o centro de acolhimento. Cada
-          euro doado é investido diretamente na construção.
+          Sua contribuição é fundamental para construirmos o centro de
+          acolhimento. Cada euro doado é investido diretamente na construção.
         </SectionDescription>
       </div>
 
@@ -63,7 +63,9 @@ export function DonationSection() {
           <Card>
             <CardHeader>
               <CardTitle>Valor da Doação</CardTitle>
-              <CardDescription>Escolha quanto e como deseja doar</CardDescription>
+              <CardDescription>
+                Escolha quanto e como deseja doar
+              </CardDescription>
             </CardHeader>
             <CardContent className='space-y-6'>
               <div className='flex flex-col gap-4'>

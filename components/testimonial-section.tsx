@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
-import { SectionTitle } from './section/SectionTitle';
-import { SectionDescription } from './section/SectionDescription';
+import { SectionTitle } from './ui/section/SectionTitle';
+import { SectionDescription } from './ui/section/SectionDescription';
 
 import testimonialImage from '@/assets/testimonial/testimonial.jpg';
 import Image from 'next/image';
@@ -13,7 +13,8 @@ export function TestimonialSection() {
         <div className='text-center'>
           <SectionTitle>Histórias de Impacto</SectionTitle>
           <SectionDescription>
-            Conheça algumas das vidas que foram transformadas através do nosso trabalho.
+            Conheça algumas das vidas que foram transformadas através do nosso
+            trabalho.
           </SectionDescription>
         </div>
 
@@ -33,9 +34,9 @@ export function TestimonialSection() {
                 <Quote className='size-8 text-secondary' />
                 <CardHeader className='p-0'>
                   <blockquote className='mt-4 text-lg text-muted-foreground'>
-                    Hoje, tenho um lugar para chamar de lar. A DI MI PA BÔS não apenas me
-                    deu uma casa, mas me devolveu a dignidade e a esperança em um futuro
-                    melhor.
+                    Hoje, tenho um lugar para chamar de lar. A DI MI PA BÔS não
+                    apenas me deu uma casa, mas me devolveu a dignidade e a
+                    esperança em um futuro melhor.
                   </blockquote>
 
                   <footer className='mt-4'>

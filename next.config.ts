@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname:
+          'dimipabos.199b6cc24673b9eeccbff632eefdafd7.r2.cloudflarestorage.com',
+        pathname: '/**',
+      },
     ],
   },
 };

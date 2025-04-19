@@ -3,20 +3,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import cesaltinaImage from '@/assets/team/cesaltina.jpeg';
 import avatarPlaceholder from '@/assets/team/avatar_placeholder.jpg';
 import Image from 'next/image';
-import { SectionTitle } from './section/SectionTitle';
-import { SectionDescription } from './section/SectionDescription';
+import { SectionTitle } from './ui/section/SectionTitle';
+import { SectionDescription } from './ui/section/SectionDescription';
 
 const team = [
   {
     name: 'Cesaltina Pereira',
     role: 'Coordenadora Geral',
-    description: 'Apaixonada por ajudar pessoas em situação de vulnerabilidade.',
+    description:
+      'Apaixonada por ajudar pessoas em situação de vulnerabilidade.',
     image: cesaltinaImage,
   },
   {
     name: 'Por completar',
     role: 'Diretor de Operações',
-    description: 'Dedicado a criar soluções eficientes para maximizar nosso impacto.',
+    description:
+      'Dedicado a criar soluções eficientes para maximizar nosso impacto.',
     image: avatarPlaceholder,
   },
   {
@@ -34,8 +36,8 @@ export function TeamSection() {
         <div className='text-center'>
           <SectionTitle>Nossa Equipe</SectionTitle>
           <SectionDescription>
-            Conheça as pessoas dedicadas que trabalham para tornar o centro de tratamento
-            uma realidade.
+            Conheça as pessoas dedicadas que trabalham para tornar o centro de
+            tratamento uma realidade.
           </SectionDescription>
         </div>
 
@@ -56,7 +58,9 @@ export function TeamSection() {
                   <CardHeader className='text-center p-0'>
                     <CardTitle className='text-xl'>{member.name}</CardTitle>
 
-                    <p className='font-medium text-primary text-sm'>{member.role}</p>
+                    <p className='font-medium text-primary text-sm'>
+                      {member.role}
+                    </p>
                   </CardHeader>
                   <p className='mt-2 text-center text-sm text-muted-foreground text-pretty'>
                     {member.description}

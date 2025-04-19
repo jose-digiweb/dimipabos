@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { SectionTitle, SectionDescription } from '@/components/section';
+import { SectionTitle, SectionDescription } from '@/components/ui/section';
 import { CTASection, CTAButton } from '@/components/cta';
 import {
   HeroDescription,
@@ -17,8 +17,16 @@ import { HomeProjectCard } from '@/components/HomeProjectCard';
 import cardImage from '@/assets/dimipabos_logo_2.png';
 import { Building2, Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
+import Image from 'next/image';
+import { ImageCarousel } from '@/components/image-carousel';
+import { Suspense } from 'react';
 
-export default function Page() {
+export default async function Page() {
   return (
     <div className='flex min-h-screen flex-col'>
       <HeroWrapper>
@@ -30,8 +38,8 @@ export default function Page() {
 
           <HeroDescription>
             Estamos construindo o primeiro centro especializado em tratamento e
-            reabilitação para pessoas em situação de dependência química na Guiné-Bissau.
-            Um espaço de acolhimento, cuidado e renovação.
+            reabilitação para pessoas em situação de dependência química na
+            Guiné-Bissau. Um espaço de acolhimento, cuidado e renovação.
           </HeroDescription>
 
           <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
@@ -55,11 +63,39 @@ export default function Page() {
             image={cardImage}
             imageClassName='object-contain'
           >
-            Trabalhamos incansavelmente para construir um espaço de acolhimento e
-            recuperação, onde cada pessoa possa encontrar apoio para recomeçar.
+            Trabalhamos incansavelmente para construir um espaço de acolhimento
+            e recuperação, onde cada pessoa possa encontrar apoio para
+            recomeçar.
           </HeroCard>
         </HeroCardSection>
       </HeroWrapper>
+
+      <section className='py-16'>
+        <div className='text-center mb-12'>
+          <SectionTitle>Nossa caminhada</SectionTitle>
+
+          <SectionDescription>
+            Algumas fotos do que representam nossa luta e esperança.
+          </SectionDescription>
+        </div>
+
+        <Suspense
+          fallback={
+            <div className='w-full flex items-center gap-4'>
+              {[1, 2, 3].map(v => (
+                <div
+                  key={v}
+                  className='h-96 bg-slate-300 animate-pulse w-full rounded-md'
+                />
+              ))}
+            </div>
+          }
+        >
+          <div className='w-full max-w-[1400px] mx-auto'>
+            <ImageCarousel />
+          </div>
+        </Suspense>
+      </section>
 
       <section className='bg-slate-50 py-16'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -67,82 +103,29 @@ export default function Page() {
             <SectionTitle>O Centro de Reabilitação</SectionTitle>
 
             <SectionDescription>
-              Conheça o projeto que vai transformar o tratamento da dependência química na
-              Guiné-Bissau.
+              Conheça o projeto que vai transformar o tratamento da dependência
+              química na Guiné-Bissau.
             </SectionDescription>
           </div>
 
           <div className='mt-16 grid gap-8 md:grid-cols-3'>
             <HomeProjectCard icon='home' title='Acolhimento' href='/projetos'>
-              Instalações completas com dormitórios, refeitório, salas de atendimento e
-              espaços de convivência para até 20 pessoas.
+              Instalações completas com dormitórios, refeitório, salas de
+              atendimento e espaços de convivência para até 20 pessoas.
             </HomeProjectCard>
 
             <HomeProjectCard icon='reab' title='Reabilitação' href='/projetos'>
-              Equipe multidisciplinar preparada para oferecer acompanhamento médico,
-              psicológico e terapêutico especializado.
+              Equipe multidisciplinar preparada para oferecer acompanhamento
+              médico, psicológico e terapêutico especializado.
             </HomeProjectCard>
 
             <HomeProjectCard icon='edu' title='Reintegração' href='/projetos'>
-              Suporte pós-tratamento com monitoramento e apoio para prevenir recaídas e
-              garantir uma recuperação duradoura.
+              Suporte pós-tratamento com monitoramento e apoio para prevenir
+              recaídas e garantir uma recuperação duradoura.
             </HomeProjectCard>
           </div>
         </div>
       </section>
-
-      {/* Progress Section */}
-      <section className='py-16'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-          <div className='grid gap-12 lg:grid-cols-2'>
-            <div className='flex flex-col justify-center'>
-              <SectionTitle>Acompanhe Nossa Construção</SectionTitle>
-              <SectionDescription className='mx-0'>
-                A construção do centro está em andamento e cada contribuição nos aproxima
-                do objetivo. Veja nosso progresso e como você pode ajudar.
-              </SectionDescription>
-              <div className='mt-8'>
-                <div className='relative h-4 w-full overflow-hidden rounded-full bg-muted'>
-                  <div className='h-full w-[10%] rounded-full bg-secondary' />
-                </div>
-                <div className='mt-4 flex justify-between text-sm'>
-                  <span className='font-medium'>10% Concluído</span>
-                  <span className='text-muted-foreground'>Meta: 100%</span>
-                </div>
-              </div>
-              <div className='mt-8'>
-                <CTAButton text='Contribua com a Construção' />
-              </div>
-            </div>
-            <div className='grid gap-6 sm:grid-cols-2'>
-              <Card>
-                <CardContent className='flex flex-col items-center p-6'>
-                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10'>
-                    <Building2 className='h-6 w-6 text-secondary' />
-                  </div>
-                  <h3 className='mt-4 text-xl font-bold'>Fase Atual</h3>
-                  <p className='mt-2 text-center text-sm text-muted-foreground'>
-                    Construção das estruturas básicas e fundações do centro
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className='flex flex-col items-center p-6'>
-                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10'>
-                    <Users className='h-6 w-6 text-secondary' />
-                  </div>
-                  <h3 className='mt-4 text-xl font-bold'>Próximos Passos</h3>
-                  <p className='mt-2 text-center text-sm text-muted-foreground'>
-                    Instalação dos dormitórios e áreas de convivência
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* <TestimonialSection /> */}
 
       <CTASection className='border-b' />
     </div>

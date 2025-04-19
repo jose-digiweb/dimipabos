@@ -23,8 +23,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { SectionTitle } from './section/SectionTitle';
-import { SectionDescription } from './section/SectionDescription';
+import { SectionTitle } from './ui/section/SectionTitle';
+import { SectionDescription } from './ui/section/SectionDescription';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -70,7 +70,8 @@ export function VolunteerForm() {
       <div className='text-center'>
         <SectionTitle>Seja um Voluntário</SectionTitle>
         <SectionDescription>
-          Dedique seu tempo e habilidades para fazer a diferença na vida de alguém.
+          Dedique seu tempo e habilidades para fazer a diferença na vida de
+          alguém.
         </SectionDescription>
       </div>
 
@@ -127,7 +128,10 @@ export function VolunteerForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Área de Interesse</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder='Selecione uma área' />
@@ -188,12 +192,15 @@ export function VolunteerForm() {
               render={({ field }) => (
                 <FormItem className='flex flex-row items-start space-x-3 space-y-0'>
                   <FormControl>
-                    <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
                   </FormControl>
                   <div className='space-y-1 leading-none'>
                     <FormLabel>
-                      Concordo em receber comunicações da DI MI PA BÔS e aceito os termos
-                      de uso e política de privacidade.
+                      Concordo em receber comunicações da DI MI PA BÔS e aceito
+                      os termos de uso e política de privacidade.
                     </FormLabel>
                     <FormMessage />
                   </div>

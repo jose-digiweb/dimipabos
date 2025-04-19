@@ -4,7 +4,7 @@ import { DonationSection } from '@/components/donation-section';
 import { VolunteerForm } from '@/components/volunteer-form';
 import { PartnershipForm } from '@/components/partnership-form';
 import { TestimonialSection } from '@/components/testimonial-section';
-import { SectionTitle, SectionDescription } from '@/components/section';
+import { SectionTitle, SectionDescription } from '@/components/ui/section';
 import { CTASection } from '@/components/cta';
 import Link from 'next/link';
 import {
@@ -32,8 +32,9 @@ export default function HelpPage() {
           <HeroSubtitle>Ajude a Construir Esperança</HeroSubtitle>
 
           <HeroDescription>
-            Sua contribuição é fundamental para concluirmos a construção do centro e
-            começarmos a transformar vidas. Cada tijolo conta, cada ajuda importa..
+            Sua contribuição é fundamental para concluirmos a construção do
+            centro e começarmos a transformar vidas. Cada tijolo conta, cada
+            ajuda importa..
           </HeroDescription>
 
           <div className='mt-10 flex items-center gap-4'>
@@ -44,9 +45,13 @@ export default function HelpPage() {
         </div>
 
         <HeroCardSection>
-          <HeroCard variant='ajudar' title='Como Você Pode Ajudar' image={projHabitacao}>
-            Escolha a forma que mais combina com você e faça parte desta transformação
-            social.
+          <HeroCard
+            variant='ajudar'
+            title='Como Você Pode Ajudar'
+            image={projHabitacao}
+          >
+            Escolha a forma que mais combina com você e faça parte desta
+            transformação social.
           </HeroCard>
         </HeroCardSection>
       </HeroWrapper>
@@ -58,8 +63,8 @@ export default function HelpPage() {
             <SectionTitle>Como Você Pode Ajudar</SectionTitle>
 
             <SectionDescription>
-              Existem várias maneiras de contribuir com nossa causa. Escolha a que mais
-              combina com você.
+              Existem várias maneiras de contribuir com nossa causa. Escolha a
+              que mais combina com você.
             </SectionDescription>
           </div>
 
@@ -70,8 +75,8 @@ export default function HelpPage() {
               <h3 className='mt-4 text-xl font-bold'>Doe</h3>
 
               <p className='mt-2 text-pretty'>
-                Sua doação ajuda a manter nossos programas de tratamento e acompanhamento
-                pós-reabilitação.
+                Sua doação ajuda a manter nossos programas de tratamento e
+                acompanhamento pós-reabilitação.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -84,8 +89,8 @@ export default function HelpPage() {
 
               <h3 className='mt-4 text-xl font-bold'>Seja Voluntário</h3>
               <p className='mt-2 text-pretty'>
-                Ajude em nossos programas de acompanhamento e suporte emocional aos
-                pacientes.
+                Ajude em nossos programas de acompanhamento e suporte emocional
+                aos pacientes.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -98,7 +103,8 @@ export default function HelpPage() {
 
               <h3 className='mt-4 text-xl font-bold'>Seja Parceiro</h3>
               <p className='mt-2 text-pretty'>
-                Apoie nosso trabalho de reintegração social e manutenção da sobriedade.
+                Apoie nosso trabalho de reintegração social e manutenção da
+                sobriedade.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -107,11 +113,6 @@ export default function HelpPage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Donation Section */}
-      <section id='doar' className='bg-white py-16 scroll-mt-8'>
-        <DonationSection />
       </section>
 
       {/* Volunteer Section */}
