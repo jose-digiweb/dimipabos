@@ -1,13 +1,13 @@
 // Dependencies
-import { cn } from '@/lib/utils';
-import { Button, type ButtonProps } from '../ui/button';
-import { HeartHandshake } from 'lucide-react';
-import Link from 'next/link';
+import { cn } from '@/lib/utils'
+import { HeartHandshake } from 'lucide-react'
+import Link from 'next/link'
+import { Button, type ButtonProps } from '../ui/button'
 
 type Props = {
-  text?: string;
-  onClick?: () => void;
-} & Omit<ButtonProps, 'variant'>;
+  text?: string
+  onClick?: () => void
+} & Omit<ButtonProps, 'variant'>
 
 /**
  * The CATButton component
@@ -19,14 +19,11 @@ type Props = {
 export const CTAButton = ({ text, onClick, size = 'lg', className }: Props) => {
   return (
     <Button asChild size={size} variant='CTA' onClick={onClick}>
-      <Link
-        href='/como-ajudar'
-        className={cn('flex group items-center gap-4', className)}
-      >
+      <Link href='/como-ajudar' className={cn('group flex items-center gap-4', className)}>
         <span>{text ? text : 'Doe Agora'}</span>
 
         <HeartHandshake className='size-6 group-hover:animate-pulse' />
       </Link>
     </Button>
-  );
-};
+  )
+}

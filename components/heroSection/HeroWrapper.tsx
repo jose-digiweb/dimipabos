@@ -1,12 +1,12 @@
 // Dependencies
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 // Types
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 type Props = {
-  children: ReactNode;
-  className?: string;
-};
+  children: ReactNode
+  className?: string
+}
 
 /**
  * The HeroWrapper component
@@ -31,5 +31,5 @@ export const HeroWrapper = ({ children, className }: Props) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

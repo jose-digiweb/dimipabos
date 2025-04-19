@@ -1,23 +1,23 @@
-import { Heart, Users, Handshake } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { VolunteerForm } from '@/components/volunteer-form';
-import { PartnershipForm } from '@/components/partnership-form';
-import { TestimonialSection } from '@/components/testimonial-section';
-import { SectionTitle, SectionDescription } from '@/components/ui/section';
-import { CTASection } from '@/components/cta';
-import Link from 'next/link';
+import { CTASection } from '@/components/cta'
 import {
+  HeroCard,
+  HeroCardSection,
   HeroDescription,
+  HeroStats,
+  HeroSubtitle,
   HeroTitle,
   HeroTopText,
   HeroWrapper,
-  HeroSubtitle,
-  HeroCard,
-  HeroCardSection,
-  HeroStats,
-} from '@/components/heroSection';
+} from '@/components/heroSection'
+import { PartnershipForm } from '@/components/partnership-form'
+import { TestimonialSection } from '@/components/testimonial-section'
+import { Button } from '@/components/ui/button'
+import { SectionDescription, SectionTitle } from '@/components/ui/section'
+import { VolunteerForm } from '@/components/volunteer-form'
+import { Handshake, Heart, Users } from 'lucide-react'
+import Link from 'next/link'
 
-import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg';
+import projHabitacao from '@/assets/projectos/proj_habitacao.jpeg'
 
 export default function HelpPage() {
   return (
@@ -31,9 +31,8 @@ export default function HelpPage() {
           <HeroSubtitle>Ajude a Construir Esperança</HeroSubtitle>
 
           <HeroDescription>
-            Sua contribuição é fundamental para concluirmos a construção do
-            centro e começarmos a transformar vidas. Cada tijolo conta, cada
-            ajuda importa..
+            Sua contribuição é fundamental para concluirmos a construção do centro e começarmos a
+            transformar vidas. Cada tijolo conta, cada ajuda importa..
           </HeroDescription>
 
           <div className='mt-10 flex items-center gap-4'>
@@ -44,13 +43,8 @@ export default function HelpPage() {
         </div>
 
         <HeroCardSection>
-          <HeroCard
-            variant='ajudar'
-            title='Como Você Pode Ajudar'
-            image={projHabitacao}
-          >
-            Escolha a forma que mais combina com você e faça parte desta
-            transformação social.
+          <HeroCard variant='ajudar' title='Como Você Pode Ajudar' image={projHabitacao}>
+            Escolha a forma que mais combina com você e faça parte desta transformação social.
           </HeroCard>
         </HeroCardSection>
       </HeroWrapper>
@@ -62,8 +56,8 @@ export default function HelpPage() {
             <SectionTitle>Como Você Pode Ajudar</SectionTitle>
 
             <SectionDescription>
-              Existem várias maneiras de contribuir com nossa causa. Escolha a
-              que mais combina com você.
+              Existem várias maneiras de contribuir com nossa causa. Escolha a que mais combina com
+              você.
             </SectionDescription>
           </div>
 
@@ -71,11 +65,11 @@ export default function HelpPage() {
             <div className='flex flex-col items-center rounded-lg bg-muted p-8 text-center'>
               <Heart className='size-12 text-secondary' />
 
-              <h3 className='mt-4 text-xl font-bold'>Doe</h3>
+              <h3 className='mt-4 font-bold text-xl'>Doe</h3>
 
               <p className='mt-2 text-pretty'>
-                Sua doação ajuda a manter nossos programas de tratamento e
-                acompanhamento pós-reabilitação.
+                Sua doação ajuda a manter nossos programas de tratamento e acompanhamento
+                pós-reabilitação.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -86,10 +80,9 @@ export default function HelpPage() {
             <div className='flex flex-col items-center rounded-lg bg-muted p-8 text-center'>
               <Users className='size-12 text-secondary' />
 
-              <h3 className='mt-4 text-xl font-bold'>Seja Voluntário</h3>
+              <h3 className='mt-4 font-bold text-xl'>Seja Voluntário</h3>
               <p className='mt-2 text-pretty'>
-                Ajude em nossos programas de acompanhamento e suporte emocional
-                aos pacientes.
+                Ajude em nossos programas de acompanhamento e suporte emocional aos pacientes.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -100,10 +93,9 @@ export default function HelpPage() {
             <div className='flex flex-col items-center rounded-lg bg-muted p-8 text-center'>
               <Handshake className='size-12 text-secondary' />
 
-              <h3 className='mt-4 text-xl font-bold'>Seja Parceiro</h3>
+              <h3 className='mt-4 font-bold text-xl'>Seja Parceiro</h3>
               <p className='mt-2 text-pretty'>
-                Apoie nosso trabalho de reintegração social e manutenção da
-                sobriedade.
+                Apoie nosso trabalho de reintegração social e manutenção da sobriedade.
               </p>
 
               <Button asChild variant='CTA' className='mt-6'>
@@ -115,12 +107,12 @@ export default function HelpPage() {
       </section>
 
       {/* Volunteer Section */}
-      <section id='voluntario' className='bg-slate-50 py-16 scroll-mt-8'>
+      <section id='voluntario' className='scroll-mt-8 bg-slate-50 py-16'>
         <VolunteerForm />
       </section>
 
       {/* Partnership Section */}
-      <section id='parceiro' className='py-16 scroll-mt-8'>
+      <section id='parceiro' className='scroll-mt-8 py-16'>
         <PartnershipForm />
       </section>
 
@@ -130,5 +122,5 @@ export default function HelpPage() {
       {/* CTA Section */}
       <CTASection className='border-b' />
     </div>
-  );
+  )
 }

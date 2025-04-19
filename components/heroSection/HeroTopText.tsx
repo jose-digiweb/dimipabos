@@ -1,13 +1,13 @@
 // Dependencies
-import { cn } from '@/lib/utils';
-import { SendHorizontal } from 'lucide-react';
+import { cn } from '@/lib/utils'
+import { SendHorizontal } from 'lucide-react'
 
 // Types
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 type Props = {
-  children: ReactNode;
-  className?: string;
-};
+  children: ReactNode
+  className?: string
+}
 
 /**
  * The HeroTopText component
@@ -20,7 +20,7 @@ export const HeroTopText = ({ children, className }: Props) => {
   return (
     <div
       className={cn(
-        'inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-blue-700',
+        'inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 font-medium text-blue-700 text-sm',
         className
       )}
     >
@@ -28,5 +28,5 @@ export const HeroTopText = ({ children, className }: Props) => {
 
       {children}
     </div>
-  );
-};
+  )
+}

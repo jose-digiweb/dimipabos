@@ -1,15 +1,9 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { CTAButton } from './cta';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { CTAButton } from './cta'
 
 interface ProjectProgressProps {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
 export function ProjectProgress({ title, description }: ProjectProgressProps) {
@@ -23,16 +17,16 @@ export function ProjectProgress({ title, description }: ProjectProgressProps) {
         <div className='rounded-lg bg-muted p-6'>
           <div className='flex flex-wrap gap-8'>
             <div className='flex-1'>
-              <div className='text-sm font-medium text-muted-foreground'>Meta</div>
-              <div className='mt-1 text-2xl font-bold'>€500.000</div>
+              <div className='font-medium text-muted-foreground text-sm'>Meta</div>
+              <div className='mt-1 font-bold text-2xl'>€500.000</div>
             </div>
             <div className='flex-1'>
-              <div className='text-sm font-medium text-muted-foreground'>Arrecadado</div>
-              <div className='mt-1 text-2xl font-bold'>€75.000</div>
+              <div className='font-medium text-muted-foreground text-sm'>Arrecadado</div>
+              <div className='mt-1 font-bold text-2xl'>€75.000</div>
             </div>
             <div className='flex-1'>
-              <div className='text-sm font-medium text-muted-foreground'>Doadores</div>
-              <div className='mt-1 text-2xl font-bold'>42</div>
+              <div className='font-medium text-muted-foreground text-sm'>Doadores</div>
+              <div className='mt-1 font-bold text-2xl'>42</div>
             </div>
           </div>
         </div>
@@ -40,5 +34,5 @@ export function ProjectProgress({ title, description }: ProjectProgressProps) {
         <CTAButton text='Contribua com o Projeto' size='lg' />
       </CardContent>
     </Card>
-  );
+  )
 }

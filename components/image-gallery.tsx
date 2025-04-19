@@ -1,27 +1,27 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import Image from 'next/image'
+import { useState } from 'react'
 
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 
 interface ImageGalleryProps {
-  images: string[];
+  images: string[]
 }
 
 export function ImageGallery({ images }: ImageGalleryProps) {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [showLightbox, setShowLightbox] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0)
+  const [showLightbox, setShowLightbox] = useState(false)
 
   const nextImage = () => {
-    setCurrentImage(prev => (prev + 1) % images.length);
-  };
+    setCurrentImage((prev) => (prev + 1) % images.length)
+  }
 
   const previousImage = () => {
-    setCurrentImage(prev => (prev - 1 + images.length) % images.length);
-  };
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+  }
 
   return (
     <>
@@ -31,8 +31,8 @@ export function ImageGallery({ images }: ImageGalleryProps) {
             key={index}
             className='group relative aspect-4/3 cursor-pointer overflow-hidden'
             onClick={() => {
-              setCurrentImage(index);
-              setShowLightbox(true);
+              setCurrentImage(index)
+              setShowLightbox(true)
             }}
           >
             <Image
@@ -51,7 +51,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
             <Button
               variant='ghost'
               size='icon'
-              className='absolute right-4 top-4 text-white hover:bg-white/20'
+              className='absolute top-4 right-4 text-white hover:bg-white/20'
               onClick={() => setShowLightbox(false)}
             >
               <X className='h-6 w-6' />
@@ -69,9 +69,9 @@ export function ImageGallery({ images }: ImageGalleryProps) {
                 variant='ghost'
                 size='icon'
                 className='text-white hover:bg-white/20'
-                onClick={e => {
-                  e.stopPropagation();
-                  previousImage();
+                onClick={(e) => {
+                  e.stopPropagation()
+                  previousImage()
                 }}
               >
                 <ChevronLeft className='h-8 w-8' />
@@ -82,9 +82,9 @@ export function ImageGallery({ images }: ImageGalleryProps) {
                 variant='ghost'
                 size='icon'
                 className='text-white hover:bg-white/20'
-                onClick={e => {
-                  e.stopPropagation();
-                  nextImage();
+                onClick={(e) => {
+                  e.stopPropagation()
+                  nextImage()
                 }}
               >
                 <ChevronRight className='h-8 w-8' />
@@ -94,5 +94,5 @@ export function ImageGallery({ images }: ImageGalleryProps) {
         </div>
       )}
     </>
-  );
+  )
 }

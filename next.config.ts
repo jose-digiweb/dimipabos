@@ -1,4 +1,4 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   images: {
@@ -11,12 +11,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname:
-          'dimipabos.199b6cc24673b9eeccbff632eefdafd7.r2.cloudflarestorage.com',
+        hostname: 'dimipabos.199b6cc24673b9eeccbff632eefdafd7.r2.cloudflarestorage.com',
         pathname: '/**',
       },
     ],
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

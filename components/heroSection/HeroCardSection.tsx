@@ -1,13 +1,13 @@
 // Dependencies
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 // Types
-import type { ReactNode } from 'react';
-import { HeroBgColors } from './HeroBgColors';
+import type { ReactNode } from 'react'
+import { HeroBgColors } from './HeroBgColors'
 type Props = {
-  children: ReactNode;
-  className?: string;
-};
+  children: ReactNode
+  className?: string
+}
 
 /**
  * The HeroCardSection component
@@ -23,5 +23,5 @@ export const HeroCardSection = ({ children, className }: Props) => {
 
       {children}
     </div>
-  );
-};
+  )
+}

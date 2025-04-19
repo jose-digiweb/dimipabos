@@ -1,22 +1,22 @@
-import { ImpactNumbers } from '@/components/impact-numbers';
-import { SectionTitle, SectionDescription } from '@/components/ui/section';
-import { CTASection, CTAButton } from '@/components/cta';
-import { ProjectCard } from '@/components/projects';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { CTAButton, CTASection } from '@/components/cta'
 import {
+  HeroCard,
+  HeroCardSection,
   HeroDescription,
+  HeroSubtitle,
   HeroTitle,
   HeroTopText,
   HeroWrapper,
-  HeroSubtitle,
-  HeroCard,
-  HeroCardSection,
-} from '@/components/heroSection';
+} from '@/components/heroSection'
+import { ImpactNumbers } from '@/components/impact-numbers'
+import { ProjectCard } from '@/components/projects'
+import { Button } from '@/components/ui/button'
+import { SectionDescription, SectionTitle } from '@/components/ui/section'
+import Link from 'next/link'
 
-import projReab from '@/assets/projectos/proj_reab.jpeg';
+import projReab from '@/assets/projectos/proj_reab.jpeg'
 
-import { projects } from '@/lib/data';
+import { projects } from '@/lib/data'
 
 export default function ProjectsPage() {
   return (
@@ -30,9 +30,9 @@ export default function ProjectsPage() {
           <HeroSubtitle>Conheça nossos programas de reabilitação</HeroSubtitle>
 
           <HeroDescription>
-            Através de nossos projetos, oferecemos um caminho completo para a
-            recuperação, desde o acolhimento inicial até o acompanhamento
-            pós-tratamento, garantindo uma reintegração segura e duradoura.
+            Através de nossos projetos, oferecemos um caminho completo para a recuperação, desde o
+            acolhimento inicial até o acompanhamento pós-tratamento, garantindo uma reintegração
+            segura e duradoura.
           </HeroDescription>
 
           <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
@@ -68,8 +68,7 @@ export default function ProjectsPage() {
           <div className='text-center'>
             <SectionTitle>Projetos em Destaque</SectionTitle>
             <SectionDescription>
-              Conheça nossos principais projetos e o impacto que estamos gerando
-              na comunidade.
+              Conheça nossos principais projetos e o impacto que estamos gerando na comunidade.
             </SectionDescription>
           </div>
 
@@ -90,5 +89,5 @@ export default function ProjectsPage() {
       {/* CTA Section */}
       <CTASection className='border-b' />
     </div>
-  );
+  )
 }

@@ -1,39 +1,26 @@
-'use client';
+'use client'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { CheckCircle2, Info, Shield } from 'lucide-react'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
 
-import * as React from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { Shield, Info, CheckCircle2 } from 'lucide-react';
-
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 const formSchema = z.object({
   amount: z.string().min(1, {
     message: 'Por favor, insira um valor para doação.',
   }),
   frequency: z.enum(['single', 'monthly']),
-});
+})
 
-import { SectionTitle } from './ui/section/SectionTitle';
-import { SectionDescription } from './ui/section/SectionDescription';
-import { CTAButton } from './cta';
+import { CTAButton } from './cta'
+import { SectionDescription } from './ui/section/SectionDescription'
+import { SectionTitle } from './ui/section/SectionTitle'
 
 export function DonationSection() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -41,31 +28,25 @@ export function DonationSection() {
     defaultValues: {
       frequency: 'monthly',
     },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
+  })
 
   return (
     <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
       <div className='text-center'>
         <SectionTitle>Faça Sua Doação</SectionTitle>
         <SectionDescription>
-          Sua contribuição é fundamental para construirmos o centro de
-          acolhimento. Cada euro doado é investido diretamente na construção.
+          Sua contribuição é fundamental para construirmos o centro de acolhimento. Cada euro doado
+          é investido diretamente na construção.
         </SectionDescription>
       </div>
 
       <div className='mt-16'>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+        <form className='space-y-8'>
           {/* Valor e Frequência */}
           <Card>
             <CardHeader>
               <CardTitle>Valor da Doação</CardTitle>
-              <CardDescription>
-                Escolha quanto e como deseja doar
-              </CardDescription>
+              <CardDescription>Escolha quanto e como deseja doar</CardDescription>
             </CardHeader>
             <CardContent className='space-y-6'>
               <div className='flex flex-col gap-4'>
@@ -77,7 +58,7 @@ export function DonationSection() {
                       className='pl-6'
                       {...form.register('amount')}
                     />
-                    <span className='absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground'>
+                    <span className='-translate-y-1/2 absolute top-1/2 left-2 text-muted-foreground'>
                       €
                     </span>
                   </div>
@@ -98,7 +79,7 @@ export function DonationSection() {
                 <div className='space-y-4'>
                   <RadioGroup
                     defaultValue='monthly'
-                    onValueChange={value =>
+                    onValueChange={(value) =>
                       form.setValue('frequency', value as 'single' | 'monthly')
                     }
                   >
@@ -113,32 +94,31 @@ export function DonationSection() {
                       </div>
                     </div>
                   </RadioGroup>
-                  <p className='text-sm text-muted-foreground'>
+                  <p className='text-muted-foreground text-sm'>
                     💫 Doe mensalmente e seja um agente de mudança contínua
                   </p>
                 </div>
 
                 <div className='rounded-lg bg-muted p-4'>
-                  <div className='flex sm:items-center items-start gap-2'>
-                    <Shield className='size-5 shrink-0 mt-1 sm:mt-0 text-green-500' />
+                  <div className='flex items-start gap-2 sm:items-center'>
+                    <Shield className='mt-1 size-5 shrink-0 text-green-500 sm:mt-0' />
                     <h4 className='font-semibold'>Sua doação em boas mãos:</h4>
                   </div>
                   <ul className='mt-4 space-y-2'>
-                    <li className='flex sm:items-center items-start gap-2'>
-                      <CheckCircle2 className='size-4 mt-1 sm:mt-0 shrink-0 text-green-500' />
+                    <li className='flex items-start gap-2 sm:items-center'>
+                      <CheckCircle2 className='mt-1 size-4 shrink-0 text-green-500 sm:mt-0' />
                       <span className='text-sm'>
-                        100% dos fundos são destinados à construção do centro de
-                        acolhimento
+                        100% dos fundos são destinados à construção do centro de acolhimento
                       </span>
                     </li>
-                    <li className='flex sm:items-center items-start gap-2'>
-                      <CheckCircle2 className='size-4 mt-1 sm:mt-0 shrink-0 text-green-500' />
+                    <li className='flex items-start gap-2 sm:items-center'>
+                      <CheckCircle2 className='mt-1 size-4 shrink-0 text-green-500 sm:mt-0' />
                       <span className='text-sm'>
                         Pagamentos processados com segurança e criptografia
                       </span>
                     </li>
-                    <li className='flex sm:items-center items-start gap-2'>
-                      <CheckCircle2 className='size-4 mt-1 sm:mt-0 shrink-0 text-green-500' />
+                    <li className='flex items-start gap-2 sm:items-center'>
+                      <CheckCircle2 className='mt-1 size-4 shrink-0 text-green-500 sm:mt-0' />
                       <span className='text-sm'>
                         Recibo enviado automaticamente para seu e-mail
                       </span>
@@ -148,7 +128,7 @@ export function DonationSection() {
 
                 <CTAButton
                   text='Prosseguir para Pagamento'
-                  className='mt-6 py-6 text-[1em] max-w-min'
+                  className='mt-6 max-w-min py-6 text-[1em]'
                 />
               </div>
             </CardContent>
@@ -156,5 +136,5 @@ export function DonationSection() {
         </form>
       </div>
     </div>
-  );
+  )
 }

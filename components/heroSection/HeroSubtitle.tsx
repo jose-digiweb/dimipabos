@@ -1,12 +1,12 @@
 // Dependencies
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 // Types
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 type Props = {
-  children: ReactNode;
-  className?: string;
-};
+  children: ReactNode
+  className?: string
+}
 
 /**
  * The HeroSubtitle component
@@ -19,11 +19,11 @@ export const HeroSubtitle = ({ children, className }: Props) => {
   return (
     <span
       className={cn(
-        'mt-2 text-pretty block max-w-lg text-2xl font-medium text-primary sm:text-3xl md:text-4xl',
+        'mt-2 block max-w-lg text-pretty font-medium text-2xl text-primary sm:text-3xl md:text-4xl',
         className
       )}
     >
       {children}
     </span>
-  );
-};
+  )
+}

@@ -1,14 +1,14 @@
 // Dependencies
-import { cn } from '@/lib/utils';
-import { SectionTitle, SectionDescription } from '../ui/section';
-import { Button } from '../ui/button';
-import Link from 'next/link';
-import { CTAButton } from './CTAButton';
+import { cn } from '@/lib/utils'
+import Link from 'next/link'
+import { Button } from '../ui/button'
+import { SectionDescription, SectionTitle } from '../ui/section'
+import { CTAButton } from './CTAButton'
 
 // Types
 type Props = {
-  className?: string;
-};
+  className?: string
+}
 
 /**
  * The CTASection component
@@ -19,25 +19,20 @@ type Props = {
  */
 export const CTASection = ({ className }: Props) => {
   return (
-    <section
-      className={cn('bg-primary py-16 text-primary-foreground', className)}
-    >
+    <section className={cn('bg-primary py-16 text-primary-foreground', className)}>
       <div className='mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8'>
-        <div className='inline-flex mb-4 items-center rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white'>
-          <span className='relative flex h-3 w-3 mr-2'>
-            <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary opacity-75'></span>
-            <span className='relative inline-flex h-3 w-3 rounded-full bg-secondary'></span>
+        <div className='mb-4 inline-flex items-center rounded-full bg-white/10 px-4 py-1.5 font-medium text-sm text-white'>
+          <span className='relative mr-2 flex h-3 w-3'>
+            <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary opacity-75' />
+            <span className='relative inline-flex h-3 w-3 rounded-full bg-secondary' />
           </span>
           Faça Parte Desta Construção
         </div>
 
-        <SectionTitle className='text-primary-foreground'>
-          Ajude a Construir Esperança
-        </SectionTitle>
+        <SectionTitle className='text-primary-foreground'>Ajude a Construir Esperança</SectionTitle>
         <SectionDescription className='text-primary-foreground'>
-          Sua contribuição é fundamental para concluirmos a construção do centro
-          e começarmos a transformar vidas. Cada tijolo conta, cada ajuda
-          importa.
+          Sua contribuição é fundamental para concluirmos a construção do centro e começarmos a
+          transformar vidas. Cada tijolo conta, cada ajuda importa.
         </SectionDescription>
 
         <div className='mt-8 flex justify-center gap-4'>
@@ -48,5 +43,5 @@ export const CTASection = ({ className }: Props) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

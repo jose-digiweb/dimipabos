@@ -1,2 +1,2 @@
-export * from './CTAButton';
-export * from './CTASection';
+export * from './CTAButton'
+export * from './CTASection'

@@ -1,10 +1,11 @@
-'use client';
+'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Form,
   FormControl,
@@ -12,19 +13,18 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Checkbox } from '@/components/ui/checkbox';
-import { SectionTitle } from './ui/section/SectionTitle';
-import { SectionDescription } from './ui/section/SectionDescription';
+} from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { SectionDescription } from './ui/section/SectionDescription'
+import { SectionTitle } from './ui/section/SectionTitle'
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -43,10 +43,10 @@ const formSchema = z.object({
     message: 'Descreva sua disponibilidade.',
   }),
   experience: z.string(),
-  terms: z.boolean().refine(val => val === true, {
+  terms: z.boolean().refine((val) => val === true, {
     message: 'Você deve aceitar os termos.',
   }),
-});
+})
 
 export function VolunteerForm() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -59,25 +59,20 @@ export function VolunteerForm() {
       experience: '',
       terms: false,
     },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
+  })
 
   return (
     <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
       <div className='text-center'>
         <SectionTitle>Seja um Voluntário</SectionTitle>
         <SectionDescription>
-          Dedique seu tempo e habilidades para fazer a diferença na vida de
-          alguém.
+          Dedique seu tempo e habilidades para fazer a diferença na vida de alguém.
         </SectionDescription>
       </div>
 
       <div className='mt-16'>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+          <form className='space-y-8'>
             <FormField
               control={form.control}
               name='name'
@@ -128,10 +123,7 @@ export function VolunteerForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Área de Interesse</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder='Selecione uma área' />
@@ -192,15 +184,12 @@ export function VolunteerForm() {
               render={({ field }) => (
                 <FormItem className='flex flex-row items-start space-x-3 space-y-0'>
                   <FormControl>
-                    <Checkbox
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
+                    <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                   </FormControl>
                   <div className='space-y-1 leading-none'>
                     <FormLabel>
-                      Concordo em receber comunicações da DI MI PA BÔS e aceito
-                      os termos de uso e política de privacidade.
+                      Concordo em receber comunicações da DI MI PA BÔS e aceito os termos de uso e
+                      política de privacidade.
                     </FormLabel>
                     <FormMessage />
                   </div>
@@ -215,5 +204,5 @@ export function VolunteerForm() {
         </Form>
       </div>
     </div>
-  );
+  )
 }

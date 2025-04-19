@@ -1,12 +1,12 @@
 // Dependencies
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 // Types
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 type Props = {
-  children: ReactNode;
-  className?: string;
-};
+  children: ReactNode
+  className?: string
+}
 
 /**
  * The SectionDescription component
@@ -17,13 +17,8 @@ type Props = {
  */
 export const SectionDescription = ({ children, className }: Props) => {
   return (
-    <p
-      className={cn(
-        'mx-auto text-pretty mt-4 max-w-lg text-lg text-muted-foreground',
-        className
-      )}
-    >
+    <p className={cn('mx-auto mt-4 max-w-lg text-pretty text-lg text-muted-foreground', className)}>
       {children}
     </p>
-  );
-};
+  )
+}

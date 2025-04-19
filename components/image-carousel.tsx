@@ -1,12 +1,13 @@
-// Dependencies
+import ky from 'ky'
+import { headers } from 'next/headers'
+import Image from 'next/image'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from './ui/carousel';
-import Image from 'next/image';
+} from './ui/carousel'
 
 /**
  * The ImageCarousel component
@@ -16,23 +17,14 @@ import Image from 'next/image';
  * @returns {JSX.Element} The ImageCarousel component
  */
 export const ImageCarousel = async () => {
-  // Get the images from the API and cache them forever
-  const res = await fetch('http://localhost:3000/api/images');
+  // Get the host from headers
+  const headersList = headers()
+  const host = (await headersList).get('host') || 'localhost:3000'
+  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
 
-  // If the request fails, return null
-  if (!res.ok) {
-    return null;
-  }
-
-  // Parse the response as JSON
-  const data = (await res.json()) as {
-    images: {
-      key: string;
-      size: number;
-      lastModified: string;
-      url: string;
-    }[];
-  };
+  const data = await ky(`${protocol}://${host}/api/images`).json<{
+    images: { key: string; url: string }[]
+  }>()
 
   // Render the carousel with the images
   return (
@@ -48,7 +40,7 @@ export const ImageCarousel = async () => {
         {data.images.map((image, index) => (
           <CarouselItem
             key={image.key}
-            className='relative md:basis-1/2 lg:basis-1/3 rounded-md overflow-hidden'
+            className='relative overflow-hidden rounded-md md:basis-1/2 lg:basis-1/3'
           >
             <Image
               fill
@@ -65,5 +57,5 @@ export const ImageCarousel = async () => {
       <CarouselPrevious variant='default' className='absolute left-4 z-10' />
       <CarouselNext variant='default' className='absolute right-4 z-10' />
     </Carousel>
-  );
-};
+  )
+}

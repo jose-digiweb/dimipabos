@@ -1,23 +1,23 @@
-'use client';
+'use client'
 
-import * as React from 'react';
-import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu } from 'lucide-react'
+import Link from 'next/link'
+import * as React from 'react'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+} from '@/components/ui/sheet'
+import { cn } from '@/lib/utils'
+import { usePathname } from 'next/navigation'
 
-import logoImage from '@/assets/dimipabos_logo.png';
-import Image from 'next/image';
-import { CTAButton } from './cta';
+import logoImage from '@/assets/dimipabos_logo.png'
+import Image from 'next/image'
+import { CTAButton } from './cta'
 
 const navigation = [
   { name: 'Início', href: '/' },
@@ -25,16 +25,16 @@ const navigation = [
   { name: 'Projetos', href: '/projetos' },
   { name: 'Como Ajudar', href: '/como-ajudar' },
   { name: 'Contato', href: '/contato' },
-];
+]
 
 export function Header() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false)
 
-  const pathname = usePathname();
+  const pathname = usePathname()
 
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = () => setIsOpen(false)
 
-  const isActive = (href: string) => pathname === href;
+  const isActive = (href: string) => pathname === href
 
   return (
     <header className='sticky top-0 z-50 w-full bg-primary drop-shadow-md'>
@@ -43,10 +43,7 @@ export function Header() {
         aria-label='Global'
       >
         <div className='flex rounded-full drop-shadow-md'>
-          <Link
-            href='/'
-            className='text-xl font-bold text-white rounded-full drop-shadow-md'
-          >
+          <Link href='/' className='rounded-full font-bold text-white text-xl drop-shadow-md'>
             <Image
               src={logoImage}
               alt='DI MI PA BÔS'
@@ -58,12 +55,12 @@ export function Header() {
         </div>
 
         <div className='hidden lg:flex lg:gap-x-12'>
-          {navigation.map(item => (
+          {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className={cn(
-                'text-base font-semibold underline-offset-4 decoration-secondary leading-6 text-white hover:underline transition-colors',
+                'font-semibold text-base text-white leading-6 decoration-secondary underline-offset-4 transition-colors hover:underline',
                 { underline: isActive(item.href) }
               )}
             >
@@ -89,7 +86,7 @@ export function Header() {
                   <Menu className='size-10' aria-hidden='true' />
                 </Button>
               </SheetTrigger>
-              <SheetContent side='right' className='w-full backdrop-blur-xs bg-slate-50'>
+              <SheetContent side='right' className='w-full bg-slate-50 backdrop-blur-xs'>
                 <div className='mt-6 flow-root'>
                   <SheetTitle className='sr-only'>The mobile menu</SheetTitle>
                   <SheetDescription className='sr-only'>
@@ -98,16 +95,17 @@ export function Header() {
 
                   <div className='-my-6 divide-y'>
                     <div className='space-y-2 py-6'>
-                      {navigation.map(item => (
+                      {navigation.map((item) => (
                         <Link
                           key={item.name}
                           href={item.href}
                           onClick={closeMenu}
                           className={cn(
-                            '-mx-3 block rounded-md px-3 py-2 text-base font-semibold leading-7 text-foreground',
+                            '-mx-3 block rounded-md px-3 py-2 font-semibold text-base text-foreground leading-7',
                             {
-                              'text-primary bg-blue-50 shadow-xs drop-shadow-xs':
-                                isActive(item.href),
+                              'bg-blue-50 text-primary shadow-xs drop-shadow-xs': isActive(
+                                item.href
+                              ),
                             }
                           )}
                         >
@@ -126,5 +124,5 @@ export function Header() {
         </div>
       </nav>
     </header>
-  );
+  )
 }

@@ -1,30 +1,30 @@
 // Dependencies
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 import {
-  Heart,
-  Home,
-  Users,
-  Eye,
-  HandshakeIcon,
-  Hammer,
-  HeartHandshake,
-  GraduationCap,
-  Wallet,
-  UserPlus,
   Building,
-} from 'lucide-react';
-import Image, { type ImageProps } from 'next/image';
+  Eye,
+  GraduationCap,
+  Hammer,
+  HandshakeIcon,
+  Heart,
+  HeartHandshake,
+  Home,
+  UserPlus,
+  Users,
+  Wallet,
+} from 'lucide-react'
+import Image, { type ImageProps } from 'next/image'
 
 // Types
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 type Props = {
-  title: string;
-  children: ReactNode;
-  image: ImageProps['src'];
-  variant: 'home' | 'sobre' | 'projetos' | 'contato' | 'ajudar';
-  className?: string;
-  imageClassName?: string;
-};
+  title: string
+  children: ReactNode
+  image: ImageProps['src']
+  variant: 'home' | 'sobre' | 'projetos' | 'contato' | 'ajudar'
+  className?: string
+  imageClassName?: string
+}
 
 /**
  * The HeroCard component
@@ -42,13 +42,8 @@ export const HeroCard = ({
   imageClassName,
 }: Props) => {
   return (
-    <div
-      className={cn(
-        'overflow-hidden rounded-2xl z-10 bg-white shadow-2xl max-w-md',
-        className
-      )}
-    >
-      <div className='aspect-video relative w-full'>
+    <div className={cn('z-10 max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl', className)}>
+      <div className='relative aspect-video w-full'>
         <Image
           fill
           priority
@@ -58,7 +53,7 @@ export const HeroCard = ({
         />
       </div>
       <div className='p-8'>
-        <h2 className='text-xl font-bold'>{title}</h2>
+        <h2 className='font-bold text-xl'>{title}</h2>
         <p className='mt-2 text-muted-foreground'>{children}</p>
 
         {variant === 'home' && <HomeIcons />}
@@ -67,23 +62,21 @@ export const HeroCard = ({
         {variant === 'ajudar' && <AjudarIcons />}
       </div>
     </div>
-  );
-};
+  )
+}
 
 function IconWrapper({
   children,
   className,
 }: {
-  className?: string;
-  children: ReactNode;
+  className?: string
+  children: ReactNode
 }) {
   return (
-    <div
-      className={cn('flex size-12 items-center justify-center rounded-full', className)}
-    >
+    <div className={cn('flex size-12 items-center justify-center rounded-full', className)}>
       {children}
     </div>
-  );
+  )
 }
 
 function HomeIcons() {
@@ -101,7 +94,7 @@ function HomeIcons() {
         <Users className='size-6 text-accent-foreground' />
       </IconWrapper>
     </div>
-  );
+  )
 }
 
 function SobreIcons() {
@@ -119,7 +112,7 @@ function SobreIcons() {
         <Eye className='size-6 text-accent-foreground' />
       </IconWrapper>
     </div>
-  );
+  )
 }
 
 function ProjetosIcons() {
@@ -137,7 +130,7 @@ function ProjetosIcons() {
         <GraduationCap className='size-6 text-accent-foreground' />
       </IconWrapper>
     </div>
-  );
+  )
 }
 
 function AjudarIcons() {
@@ -155,5 +148,5 @@ function AjudarIcons() {
         <Building className='size-6 text-accent-foreground' />
       </IconWrapper>
     </div>
-  );
+  )
 }

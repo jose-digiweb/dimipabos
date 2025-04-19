@@ -1,31 +1,31 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 // Dependencies
-import { cn } from '@/lib/utils';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Link from 'next/link';
-import { ArrowRight, Heart, Home, Users } from 'lucide-react';
-import { type ReactNode, useMemo } from 'react';
+import { cn } from '@/lib/utils'
+import { ArrowRight, Heart, Home, Users } from 'lucide-react'
+import Link from 'next/link'
+import { type ReactNode, useMemo } from 'react'
 
 // Types
-type Icons = 'home' | 'reab' | 'edu';
+type Icons = 'home' | 'reab' | 'edu'
 type Props = {
-  title: string;
-  children: ReactNode;
-  href: string;
-  icon: Icons;
-  className?: string;
-};
+  title: string
+  children: ReactNode
+  href: string
+  icon: Icons
+  className?: string
+}
 const getIcon = (icon: Icons) => {
   switch (icon) {
     case 'home':
-      return Home;
+      return Home
     case 'reab':
-      return Users;
+      return Users
     case 'edu':
-      return Heart;
+      return Heart
     default:
-      return Home;
+      return Home
   }
-};
+}
 
 /**
  * The HeroProjectCard component
@@ -39,7 +39,7 @@ const getIcon = (icon: Icons) => {
  * @returns {JSX.Element} The HeroProjectCard component
  */
 export const HomeProjectCard = ({ icon, title, children, href, className }: Props) => {
-  const Icon = useMemo(() => getIcon(icon), [icon]);
+  const Icon = useMemo(() => getIcon(icon), [icon])
 
   return (
     <Card className={cn('flex flex-col', className)}>
@@ -60,5 +60,5 @@ export const HomeProjectCard = ({ icon, title, children, href, className }: Prop
         </Link>
       </CardContent>
     </Card>
-  );
-};
+  )
+}

@@ -1,10 +1,11 @@
-'use client';
+'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Form,
   FormControl,
@@ -12,10 +13,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Checkbox } from '@/components/ui/checkbox';
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -30,10 +30,10 @@ const formSchema = z.object({
   message: z.string().min(10, {
     message: 'A mensagem deve ter pelo menos 10 caracteres.',
   }),
-  consent: z.boolean().refine(val => val === true, {
+  consent: z.boolean().refine((val) => val === true, {
     message: 'Você deve autorizar o uso dos seus dados.',
   }),
-});
+})
 
 export function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -45,10 +45,9 @@ export function ContactForm() {
       message: '',
       consent: false,
     },
-  });
+  })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  function onSubmit(_values: z.infer<typeof formSchema>) {
     // Here you would typically send the form data to your server
   }
 
@@ -124,9 +123,7 @@ export function ContactForm() {
                 <Checkbox checked={field.value} onCheckedChange={field.onChange} />
               </FormControl>
               <div className='space-y-1 leading-none'>
-                <FormLabel>
-                  Eu autorizo o uso dos meus dados para resposta da mensagem.
-                </FormLabel>
+                <FormLabel>Eu autorizo o uso dos meus dados para resposta da mensagem.</FormLabel>
                 <FormMessage />
               </div>
             </FormItem>
@@ -138,5 +135,5 @@ export function ContactForm() {
         </Button>
       </form>
     </Form>
-  );
+  )
 }

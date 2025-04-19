@@ -1,26 +1,26 @@
-type ProjectStatus = 'captacao' | 'planejamento' | 'andamento' | 'concluido';
+type ProjectStatus = 'captacao' | 'planejamento' | 'andamento' | 'concluido'
 
 export type ProjectType = {
-  id: string;
-  slug: string;
-  title: string;
-  status: ProjectStatus;
-  description: string;
-  shortDescription: string;
-  longDescription: string;
-  location: string;
-  startDate: string;
-  capacity: string;
-  image: string;
-  images: string[];
-  team: string[];
+  id: string
+  slug: string
+  title: string
+  status: ProjectStatus
+  description: string
+  shortDescription: string
+  longDescription: string
+  location: string
+  startDate: string
+  capacity: string
+  image: string
+  images: string[]
+  team: string[]
   contact: {
-    name: string;
-    role: string;
-    email: string;
-    phone: string;
-  };
-};
+    name: string
+    role: string
+    email: string
+    phone: string
+  }
+}
 
 export const projects: ProjectType[] = [
   {
@@ -43,8 +43,7 @@ export const projects: ProjectType[] = [
     location: 'Bissau, Guiné-Bissau',
     startDate: '2023',
     capacity: '20 pessoas',
-    image:
-      'https://res.cloudinary.com/dg0lp0ga7/image/upload/v1738606249/recup_utpsyv.jpg',
+    image: 'https://res.cloudinary.com/dg0lp0ga7/image/upload/v1738606249/recup_utpsyv.jpg',
     images: [],
     team: [
       'Equipe médica especializada',
@@ -120,4 +119,4 @@ export const projects: ProjectType[] = [
   //     phone: '+245 123 456 789',
   //   },
   // },
-];
+]

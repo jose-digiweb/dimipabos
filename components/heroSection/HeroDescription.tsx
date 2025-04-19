@@ -1,12 +1,12 @@
 // Dependencies
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 // Types
-import type { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 type Props = {
-  children: ReactNode;
-  className?: string;
-};
+  children: ReactNode
+  className?: string
+}
 
 /**
  * The HeroDescription component
@@ -19,12 +19,9 @@ type Props = {
 export const HeroDescription = ({ children, className }: Props) => {
   return (
     <p
-      className={cn(
-        'mt-6 text-xl text-pretty max-w-xl leading-8 text-muted-foreground',
-        className
-      )}
+      className={cn('mt-6 max-w-xl text-pretty text-muted-foreground text-xl leading-8', className)}
     >
       {children}
     </p>
-  );
-};
+  )
+}
